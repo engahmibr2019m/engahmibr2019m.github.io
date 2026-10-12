@@ -760,6 +760,9 @@ if (window.tailwind) tailwind.config = {
             }
         }
     </style>
+    
+    <!-- Vercel Web Analytics -->
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
 <body class="bg-void text-gray-100">
     <div class="progress" id="progress"></div>
@@ -1047,7 +1050,7 @@ function animateWorks() {
 function requestAnimate() {
           if (!ticking) { ticking = true; requestAnimationFrame(animateWorks); }
 }
-/* ميلان ثلاثي الأبعاد + لمعة مع حركة الماوس */
+/* ميلا�� ثلاثي الأبعاد + لمعة مع حركة الماوس */
 function enableTilt(card) {
           if (!window.matchMedia('(hover:hover)').matches) return;
           card.addEventListener('mousemove', e => {
