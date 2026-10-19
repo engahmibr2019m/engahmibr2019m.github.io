@@ -542,6 +542,51 @@ if (window.tailwind) tailwind.config = {
             padding: 3px 9px;
             border-radius: 999px
         }
+
+        /* أزرار التعديل والحذف للأدمن */
+        .admin-controls {
+            position: absolute;
+            top: 10px;
+            inset-inline-start: 12px;
+            z-index: 10;
+            display: none;
+            gap: 6px
+        }
+
+        .is-admin .admin-controls {
+            display: flex
+        }
+
+        .admin-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            border: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            transition: all .2s
+        }
+
+        .admin-btn-edit {
+            background: #3b82f6;
+            color: #fff
+        }
+
+        .admin-btn-edit:hover {
+            background: #2563eb
+        }
+
+        .admin-btn-delete {
+            background: #ef4444;
+            color: #fff
+        }
+
+        .admin-btn-delete:hover {
+            background: #dc2626
+        }
         /* حركة الظهور من الجنب */
         .reveal {
             opacity: 0;
@@ -937,16 +982,16 @@ if (window.tailwind) tailwind.config = {
         </div>
     </div>
 
-    <!-- نافذة إضافة كارت فيديو -->
+    <!-- نافذة إضافة/تعديل كارت فيديو -->
     <div id="cardModal" role="dialog" aria-modal="true" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/85 backdrop-blur-md p-4" onclick="if(event.target===this) closeCardModal()">
         <div class="glass-panel w-full max-w-sm rounded-3xl border border-amberGold/30 p-6 text-center relative">
             <button onclick="closeCardModal()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 hover:bg-amberGold hover:text-black transition flex items-center justify-center text-white" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
             <div class="text-center mb-4">
                 <div class="mx-auto w-12 h-12 rounded-2xl bg-amberGold/15 border border-amberGold/40 flex items-center justify-center text-amberGold mb-2"><i class="fa-solid fa-video text-lg"></i></div>
-                <h3 class="font-display font-black text-lg text-amberGold" data-i18n="cardTitle">إضافة كارت فيديو</h3>
+                <h3 id="cardModalTitle" class="font-display font-black text-lg text-amberGold" data-i18n="cardTitle">إضافة كارت فيديو</h3>
                 <p class="text-[11px] text-gray-400 mt-1" data-i18n="cardSub">رقم الفيديو + رابط صورة الخلفية + رابط الفيديو</p>
             </div>
-            <form id="cardForm" onsubmit="submitNewCard(event)" class="space-y-3 text-start">
+            <form id="cardForm" onsubmit="submitCardForm(event)" class="space-y-3 text-start">
                 <div>
                     <label for="cardNum" class="block text-[11px] font-bold text-amberGold mb-1" data-i18n="cardNumLabel">رقم الفيديو</label>
                     <input id="cardNum" type="number" min="1" max="9999" inputmode="numeric" dir="ltr" class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2.5 text-sm text-white font-bold focus:border-amberGold transition-colors">
@@ -1004,7 +1049,7 @@ const translations = {
             heroBtn:"استعرض أعمالي", worksSub:"أعمال مختارة", worksTitle:"أعمالي", workLabel:"العمل", contactBadge:"ابدأ مشروعك", contactTitle:"جاهز لرفع مستوى قناتك؟",
             watchVideoBtn:"شاهد الفيديو الخاص بهذا العمل", modalVideoTitle:"فيديو العمل",
             rights:"جميع الحقوق محفوظة © 2026 أَمْجَد."
-            ,adminAvatarTitle:"تسجيل دخول الأدمن", adminLoginTitle:"تسجيل دخول الأدمن", adminLoginSub:"ادخل باسم المستخدم وكلمة مرور الأدمن", adminUserLabel:"اسم المستخدم", adminPassLabel:"كلمة المرور", adminLoginBtn:"دخول", adminCancelBtn:"إلغاء", adminWrong:"اسم المستخدم أو كلمة المرور غير صحيحة", adminWelcome:"أنت مسجل الدخول كأدمن الآن", adminLogoutBtn:"تسجيل الخروج", adminCloseBtn:"إغلاق", adminNoServer:"تعذّر الوصول للخادم — تأكد أن server.js يعمل", adminTooMany:"محاولات كثيرة جداً — انتظر دقائق ثم أعد المحاولة", cardAddBtn:"إضافة", addCardBtn:"+ فيديو", cardTitle:"إضافة كارت فيديو", cardSub:"رقم الفيديو + رابط صورة الخلفية + رابط الفيديو", cardNumLabel:"رقم الفيديو", cardImgLabel:"رابط صورة الخلفية", cardVideoLabel:"رابط الفيديو", cardCancelBtn:"إلغاء", cardInvalid:"تأكد من الرقم (من 1 إلى 9999) وروابط تبدأ بـ https://", cardNoServer:"تعذّر الوصول للخادم لحفظ الكارت — تأكد أن server.js يعمل", cardSaved:"تمت إضافة الكارت ✔", cardForbidden:"صلاحيات غير كافية — سجّل دخول بحساب الأدمن", cardCustomDesc:"عمل مضاف حديثاً"
+            ,adminAvatarTitle:"تسجيل دخول الأدمن", adminLoginTitle:"تسجيل دخول الأدمن", adminLoginSub:"ادخل باسم المستخدم وكلمة مرور الأدمن", adminUserLabel:"اسم المستخدم", adminPassLabel:"كلمة المرور", adminLoginBtn:"دخول", adminCancelBtn:"إلغاء", adminWrong:"اسم المستخدم أو كلمة المرور غير صحيحة", adminWelcome:"أنت مسجل الدخول كأدمن الآن", adminLogoutBtn:"تسجيل الخروج", adminCloseBtn:"إغلاق", adminNoServer:"تعذّر الوصول للخادم — تأكد أن server.js يعمل", adminTooMany:"محاولات كثيرة جداً — انتظر دقائق ثم أعد المحاولة", cardAddBtn:"إضافة", addCardBtn:"+ فيديو", cardTitle:"إضافة كارت فيديو", cardSub:"رقم الفيديو + رابط صورة الخلفية + رابط الفيديو", cardNumLabel:"رقم الفيديو", cardImgLabel:"رابط صورة الخلفية", cardVideoLabel:"رابط الفيديو", cardCancelBtn:"إلغاء", cardInvalid:"تأكد من الرقم (من 1 إلى 9999) وروابط تبدأ بـ https://", cardNoServer:"تعذّر الوصول للخادم لحفظ الكارت — تأكد أن server.js يعمل", cardSaved:"تمت إضافة الكارت ✔", cardForbidden:"صلاحيات غير كافية — سجّل دخول بحساب الأدمن", cardCustomDesc:"عمل مضاف حديثاً", cardEditTitle:"تعديل كارت فيديو", cardEditBtn:"حفظ التعديل", cardDeleteBtn:"حذف", cardDeleteConfirm:"هل أنت متأكد من حذف هذا الكارت؟", cardDeleted:"تم حذف الكارت ✔", cardUpdated:"تم تحديث الكارت ✔"
           },
           en: {
             pageTitle:"AMJAD // Professional YouTube Editing Studio", brandName:"AMJAD", headerSubtitle:"YOUTUBE EDITOR",
@@ -1015,7 +1060,7 @@ const translations = {
             heroBtn:"Explore Work", worksSub:"Selected work", worksTitle:"My Work", workLabel:"Project", contactBadge:"Start Your Project", contactTitle:"Ready to Level Up Your Channel?",
             watchVideoBtn:"Watch This Project's Video", modalVideoTitle:"Project Video",
             rights:"All Rights Reserved © 2026 AMJAD."
-            ,adminAvatarTitle:"Admin login", adminLoginTitle:"Admin Sign In", adminLoginSub:"Enter the admin username and password", adminUserLabel:"Username", adminPassLabel:"Password", adminLoginBtn:"Sign In", adminCancelBtn:"Cancel", adminWrong:"Incorrect username or password", adminWelcome:"You are signed in as admin", adminLogoutBtn:"Sign Out", adminCloseBtn:"Close", adminNoServer:"Cannot reach the server — make sure server.js is running", adminTooMany:"Too many attempts — wait a few minutes and try again", cardAddBtn:"Add", addCardBtn:"+ Video", cardTitle:"Add Video Card", cardSub:"Video number + background image link + video link", cardNumLabel:"Video number", cardImgLabel:"Background image link", cardVideoLabel:"Video link", cardCancelBtn:"Cancel", cardInvalid:"Check the number (1–9999) and links starting with https://", cardNoServer:"Cannot reach the server to save the card — make sure server.js is running", cardSaved:"Card added ✔", cardForbidden:"Not authorized — sign in with the admin account", cardCustomDesc:"Recently added"
+            ,adminAvatarTitle:"Admin login", adminLoginTitle:"Admin Sign In", adminLoginSub:"Enter the admin username and password", adminUserLabel:"Username", adminPassLabel:"Password", adminLoginBtn:"Sign In", adminCancelBtn:"Cancel", adminWrong:"Incorrect username or password", adminWelcome:"You are signed in as admin", adminLogoutBtn:"Sign Out", adminCloseBtn:"Close", adminNoServer:"Cannot reach the server — make sure server.js is running", adminTooMany:"Too many attempts — wait a few minutes and try again", cardAddBtn:"Add", addCardBtn:"+ Video", cardTitle:"Add Video Card", cardSub:"Video number + background image link + video link", cardNumLabel:"Video number", cardImgLabel:"Background image link", cardVideoLabel:"Video link", cardCancelBtn:"Cancel", cardInvalid:"Check the number (1–9999) and links starting with https://", cardNoServer:"Cannot reach the server to save the card — make sure server.js is running", cardSaved:"Card added ✔", cardForbidden:"Not authorized — sign in with the admin account", cardCustomDesc:"Recently added", cardEditTitle:"Edit Video Card", cardEditBtn:"Save Changes", cardDeleteBtn:"Delete", cardDeleteConfirm:"Are you sure you want to delete this card?", cardDeleted:"Card deleted ✔", cardUpdated:"Card updated ✔"
           }
 };
 
@@ -1189,6 +1234,10 @@ function renderWorks() {
                 `<span class="work-num">${key.padStart(2, '0')}</span>` +
                 (item.n === TRENDING ? '<span class="hot-badge">🔥</span>' : '') +
                 `<span class="work-play"><i class="fa-solid fa-play"></i></span><span class="work-glare"></span>` +
+                `<div class="admin-controls">` +
+                  `<button class="admin-btn admin-btn-edit" onclick="openEditCard(event, ${item.n})" title="تعديل"><i class="fa-solid fa-pen"></i></button>` +
+                  `<button class="admin-btn admin-btn-delete" onclick="deleteCard(event, ${item.n})" title="حذف"><i class="fa-solid fa-trash"></i></button>` +
+                `</div>` +
               `</div>` +
               `<div class="work-text">` +
                 `<span class="work-label" data-label="${key}"></span>` +
@@ -1337,10 +1386,10 @@ function submitAdminLogin(e) {
           $('adminError').classList.add('hidden');
           btn.disabled = true;
           fetch('https://amjid-backend.vercel.app/api/login', {
-            credentials: 'include',
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username: u, password: p })
+            body: JSON.stringify({ username: u, password: p }),
+            credentials: 'include'
           })
             .then(r => {
               if (r.status === 401) throw 401;
@@ -1371,6 +1420,8 @@ function adminLogout() {
 }
 
 /* ========== كروت الفيديو المُضافة (باك اند) ========== */
+let editingCardNum = null;
+
 function refreshWorks() {
           $('worksList').innerHTML = '';
           rows.length = 0;
@@ -1394,7 +1445,7 @@ function mergeCards(cards) {
           applyLanguage();
 }
 function loadCustomCards() {
-          fetch('https://amjid-backend.vercel.app/api/cards', { credentials: 'include' }).then(r => (r && r.ok) ? r.json() : null)
+          fetch('https://amjid-backend.vercel.app/api/cards').then(r => (r && r.ok) ? r.json() : null)
             .then(d => { if (d && Array.isArray(d.cards) && d.cards.length) mergeCards(d.cards); })
             .catch(() => { /* الخادم مطفأ: نبقي الكروت الأساسية فقط */ });
 }
@@ -1404,14 +1455,56 @@ function cardModalOpen() {
 function openAddCard(e) {
           if (e) { e.preventDefault(); e.stopPropagation(); }
           if (adminModalOpen()) closeAdminModal();
+          editingCardNum = null;
           $('cardError').classList.add('hidden');
           $('cardOk').classList.add('hidden');
           $('cardNum').value = '';
           $('cardImg').value = '';
           $('cardVideo').value = '';
+          $('cardNum').disabled = false;
+          $('cardModalTitle').textContent = translations[currentLang].cardTitle;
+          $('cardSubmitBtn').textContent = translations[currentLang].cardAddBtn;
           $('cardModal').classList.remove('hidden');
           $('cardModal').classList.add('flex');
           setTimeout(() => $('cardNum').focus(), 60);
+}
+function openEditCard(e, cardNum) {
+          if (e) { e.preventDefault(); e.stopPropagation(); }
+          e.stopPropagation();
+          if (!isAdmin()) { cardFail('cardForbidden'); return; }
+          const item = galleryItems.find(x => x.n === cardNum);
+          if (!item) return;
+          editingCardNum = cardNum;
+          $('cardError').classList.add('hidden');
+          $('cardOk').classList.add('hidden');
+          $('cardNum').value = cardNum;
+          $('cardNum').disabled = true;
+          $('cardImg').value = item.img;
+          $('cardVideo').value = item.video;
+          $('cardModalTitle').textContent = translations[currentLang].cardEditTitle;
+          $('cardSubmitBtn').textContent = translations[currentLang].cardEditBtn;
+          $('cardModal').classList.remove('hidden');
+          $('cardModal').classList.add('flex');
+          setTimeout(() => $('cardImg').focus(), 60);
+}
+function deleteCard(e, cardNum) {
+          if (e) { e.preventDefault(); e.stopPropagation(); }
+          e.stopPropagation();
+          if (!isAdmin()) { cardFail('cardForbidden'); return; }
+          if (!confirm(translations[currentLang].cardDeleteConfirm)) return;
+          fetch('https://amjid-backend.vercel.app/api/cards/' + cardNum, { method: 'DELETE', credentials: 'include' })
+            .then(r => {
+              if (r.status === 401) throw 401;
+              if (r.status === 404) throw 404;
+              if (!r.ok) throw 0;
+              return r.json();
+            })
+            .then(d => {
+              mergeCards((d && d.cards) || []);
+              $('cardOk').textContent = translations[currentLang].cardDeleted;
+              $('cardOk').classList.remove('hidden');
+            })
+            .catch(status => cardFail(status === 401 ? 'cardForbidden' : status === 404 ? 'cardInvalid' : 'cardNoServer'));
 }
 function closeCardModal() {
           $('cardModal').classList.remove('flex');
@@ -1423,7 +1516,7 @@ function cardFail(key) {
           $('cardError').classList.remove('hidden');
           $('cardOk').classList.add('hidden');
 }
-function submitNewCard(e) {
+function submitCardForm(e) {
           if (e) e.preventDefault();
           const n = parseInt($('cardNum').value, 10);
           const img = $('cardImg').value.trim();
@@ -1433,27 +1526,33 @@ function submitNewCard(e) {
           $('cardError').classList.add('hidden');
           const btn = $('cardSubmitBtn');
           btn.disabled = true;
-          fetch('https://amjid-backend.vercel.app/api/cards', {
-            credentials: 'include',
-            method: 'POST',
+          const isEdit = editingCardNum !== null;
+          const url = isEdit ? 'https://amjid-backend.vercel.app/api/cards/' + editingCardNum : 'https://amjid-backend.vercel.app/api/cards';
+          const method = isEdit ? 'PUT' : 'POST';
+          fetch(url, {
+            method: method,
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ n: n, img: img, video: video })
+            body: JSON.stringify({ n: n, img: img, video: video }),
+            credentials: 'include'
           })
             .then(r => {
               if (r.status === 401) throw 401;
               if (r.status === 400) throw 400;
+              if (r.status === 404) throw 404;
               if (!r.ok) throw 0;
               return r.json();
             })
             .then(d => {
               mergeCards((d && d.cards) || [{ n: n, img: img, video: video }]);
-              $('cardOk').textContent = translations[currentLang].cardSaved;
+              $('cardOk').textContent = isEdit ? translations[currentLang].cardUpdated : translations[currentLang].cardSaved;
               $('cardOk').classList.remove('hidden');
-              $('cardNum').value = '';
-              $('cardImg').value = '';
-              $('cardVideo').value = '';
+              if (!isEdit) {
+                $('cardNum').value = '';
+                $('cardImg').value = '';
+                $('cardVideo').value = '';
+              }
             })
-            .catch(status => cardFail(status === 401 ? 'cardForbidden' : status === 400 ? 'cardInvalid' : 'cardNoServer'))
+            .catch(status => cardFail(status === 401 ? 'cardForbidden' : status === 400 || status === 404 ? 'cardInvalid' : 'cardNoServer'))
             .finally(() => { btn.disabled = false; });
 }
 
@@ -1467,7 +1566,7 @@ function checkAdminSession() {
 }
 
 /* للـ onclick في HTML */
-Object.assign(window, { goToPage, toggleTheme, toggleLanguage, openVideo, closeVideoModal, openAdminLogin, closeAdminModal, submitAdminLogin, adminLogout, openAddCard, closeCardModal, submitNewCard });
+Object.assign(window, { goToPage, toggleTheme, toggleLanguage, openVideo, closeVideoModal, openAdminLogin, closeAdminModal, submitAdminLogin, adminLogout, openAddCard, closeCardModal, submitCardForm, openEditCard, deleteCard });
 updateAdminAvatar();
 checkAdminSession();
 loadCustomCards();
