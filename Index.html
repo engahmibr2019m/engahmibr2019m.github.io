@@ -1080,16 +1080,11 @@ for (let n = 1; n <= 10; n++) {
 const BASE = 'https://github.com/engahmibr2019m/Amjid/releases/download/v1.0.0/';
 const VIDEO_LINKS = [1,2,3,4,5,6,7,8,9,10].map(n => BASE + n + 'V.mp4');
 
-const FALLBACK_IMGS = [1018, 1015, 1016, 1021, 1024, 1031, 1035, 1040, 1043, 1050];
-const MOV_A = 'https://www.w3schools.com/html/mov_bbb.mp4';
-const MOV_B = 'https://www.w3schools.com/html/movie.mp4';
 const TRENDING = 6;
-const galleryItems = FALLBACK_IMGS.map((fb, i) => ({
-          n: i + 1,
-          img: 'Picture/' + (i + 1) + 'P.png',
-          fallback: 'https://picsum.photos/id/' + fb,
-          video: (VIDEO_LINKS[i] || 'Video/' + (i + 1) + 'V.mp4').trim(),
-          fallbackVideo: (i % 2 === 0) ? MOV_A : MOV_B
+const galleryItems = [1,2,3,4,5,6,7,8,9,10].map(n => ({
+          n: n,
+          img: 'Picture/' + n + 'P.png',
+          video: (VIDEO_LINKS[n - 1] || 'Video/' + n + 'V.mp4').trim()
 }));
 
 const store = {
@@ -1230,7 +1225,7 @@ function renderWorks() {
             row.className = 'work-row' + (i % 2 ? ' flip' : '');
             row.innerHTML =
               `<div class="work-card" role="button" tabindex="0">` +
-                `<img src="${item.img}"${item.fallback ? ` onerror="this.onerror=null;this.src='${item.fallback}/800/450'"` : ' onerror="this.onerror=null"'} alt="" loading="lazy" draggable="false">` +
+                `<img src="${item.img}" onerror="this.onerror=null" alt="" loading="lazy" draggable="false">` +
                 `<span class="work-num">${key.padStart(2, '0')}</span>` +
                 (item.n === TRENDING ? '<span class="hot-badge">🔥</span>' : '') +
                 `<span class="work-play"><i class="fa-solid fa-play"></i></span><span class="work-glare"></span>` +
@@ -1285,11 +1280,6 @@ function openVideo(idx) {
             f.src = embed; f.classList.remove('hidden');
           } else {
             f.src = 'about:blank'; f.classList.add('hidden'); v.classList.remove('hidden');
-            v.onerror = () => {
-              v.onerror = null;
-              v.src = item.fallbackVideo;
-              const p = v.play(); if (p && p.catch) p.catch(() => {});
-            };
             v.src = item.video;
             const p = v.play(); if (p && p.catch) p.catch(() => {});
           }
