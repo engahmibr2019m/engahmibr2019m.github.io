@@ -20,11 +20,11 @@
     <script>
 // @ts-nocheck
 if (window.tailwind) tailwind.config = {
-          darkMode: 'class',
-          theme: { extend: {
-            colors: { void:'#030305', panelDark:'#090a0f', amberGold:'#e6a13b' },
-            fontFamily: { display:['Cairo','sans-serif'], sans:['Tajawal','sans-serif'] }
-          } }
+                  darkMode: 'class',
+                  theme: { extend: {
+                    colors: { void:'#030305', panelDark:'#090a0f', amberGold:'#e6a13b' },
+                    fontFamily: { display:['Cairo','sans-serif'], sans:['Tajawal','sans-serif'] }
+                  } }
 };
     </script>
     <style>
@@ -285,6 +285,7 @@ if (window.tailwind) tailwind.config = {
             html.light .tab-link.is-active {
                 color: #b45309
             }
+
 
         /* نقاط التنقل */
         .nav-dots {
@@ -688,6 +689,8 @@ if (window.tailwind) tailwind.config = {
             margin-bottom: 24px
         }
 
+
+
         @media(max-width:767px) {
             .page-slide {
                 padding: 90px 0 84px
@@ -744,6 +747,35 @@ if (window.tailwind) tailwind.config = {
             }
         }
 
+        /* ============ صورة الأدمن (تسجيل الدخول) ============ */
+        #adminAvatar {
+            position: relative;
+            cursor: pointer;
+            transition: box-shadow .25s ease, border-color .25s ease;
+        }
+
+            #adminAvatar:hover {
+                border-color: #e6a13b;
+                box-shadow: 0 0 0 2px rgba(230, 161, 59, .45);
+            }
+
+            #adminAvatar.is-admin {
+                border-color: #e6a13b;
+                box-shadow: 0 0 0 2px rgba(230, 161, 59, .6), 0 0 12px rgba(230, 161, 59, .55);
+            }
+
+                #adminAvatar.is-admin::after {
+                    content: '';
+                    position: absolute;
+                    right: 1px;
+                    bottom: 1px;
+                    width: 9px;
+                    height: 9px;
+                    border-radius: 50%;
+                    background: #22c55e;
+                    border: 2px solid #090a0f;
+                }
+
         @media(prefers-reduced-motion:reduce) {
             .site-bg, .hero-particle, .work-play {
                 animation: none
@@ -778,7 +810,7 @@ if (window.tailwind) tailwind.config = {
     <header class="site-header bg-void/80 backdrop-blur-md py-3 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-3 sm:px-8 flex items-center justify-between gap-2">
             <a href="#" onclick="goToPage(0); return false;" class="flex items-center gap-2 sm:gap-3 min-w-0">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden border border-amberGold/30 shadow-md shrink-0">
+                <div id="adminAvatar" role="button" tabindex="0" title="تسجيل دخول الأدمن" onclick="openAdminLogin(event)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openAdminLogin(event);}" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden border border-amberGold/30 shadow-md shrink-0">
                     <img src="00.jpg" alt="صورة أمجد" class="w-full h-full object-cover">
                 </div>
                 <div class="min-w-0">
@@ -798,6 +830,10 @@ if (window.tailwind) tailwind.config = {
                 <button onclick="toggleLanguage()" class="glass-panel hover:border-amberGold/50 text-amberGold px-2.5 h-9 sm:h-auto sm:px-3 sm:py-2 rounded-full text-xs font-bold flex items-center gap-1.5 border border-white/10" id="langBtn">
                     <i class="fa-solid fa-globe"></i> <span id="langText">EN</span>
                 </button>
+                <button id="addCardBtn" onclick="openAddCard(event)" title="إضافة كارت فيديو" class="hidden items-center gap-1.5 bg-amberGold hover:bg-amber-400 text-black px-3 h-9 sm:h-auto sm:py-2 rounded-full text-xs font-bold transition-all shadow-lg shadow-amberGold/10">
+                    <i class="fa-solid fa-plus"></i><span data-i18n="addCardBtn">+ فيديو</span>
+                </button>
+
                 <a href="https://wa.me/201228032666" target="_blank" rel="noopener" aria-label="WhatsApp" class="bg-amberGold hover:bg-amber-400 text-black w-9 h-9 sm:w-auto sm:h-auto justify-center px-0 sm:px-4 sm:py-2 rounded-full text-xs font-bold shadow-lg shadow-amberGold/10 flex items-center gap-1">
                     <i class="fa-brands fa-whatsapp text-base sm:text-sm"></i> <span dir="ltr" class="hidden sm:inline">DM</span>
                 </a>
@@ -853,7 +889,7 @@ if (window.tailwind) tailwind.config = {
             <div class="max-w-3xl mx-auto px-5 sm:px-6 text-center space-y-5 sm:space-y-6 w-full">
                 <span class="inline-block px-4 py-1.5 rounded-full glass-panel text-amberGold text-xs font-mono border border-amberGold/30" data-i18n="contactBadge">ابدأ مشروعك</span>
                 <h2 class="font-display text-3xl sm:text-5xl font-black" data-i18n="contactTitle">جاهز لرفع مستوى قناتك؟</h2>
-                <div class="flex flex-col items-center gap-3 sm:gap-4">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
                     <a href="https://wa.me/201228032666" target="_blank" rel="noopener" aria-label="WhatsApp" class="inline-flex items-center gap-2 bg-amberGold hover:bg-amber-400 text-black px-7 py-3.5 rounded-full text-sm font-bold shadow-lg shadow-amberGold/30 hover:-translate-y-0.5 transition-all">
                         <i class="fa-brands fa-whatsapp text-xl"></i> <span dir="ltr">01228032666</span>
                     </a>
@@ -862,6 +898,76 @@ if (window.tailwind) tailwind.config = {
             </div>
         </section>
     </main>
+
+    <!-- نافذة تسجيل دخول الأدمن -->
+    <div id="adminModal" role="dialog" aria-modal="true" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/85 backdrop-blur-md p-4" onclick="if(event.target===this) closeAdminModal()">
+        <div class="glass-panel w-full max-w-sm rounded-3xl border border-amberGold/30 p-6 text-center relative">
+            <button onclick="closeAdminModal()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 hover:bg-amberGold hover:text-black transition flex items-center justify-center text-white" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+
+            <div class="mx-auto w-16 h-16 rounded-2xl overflow-hidden border border-amberGold/40 mb-3">
+                <img src="00.jpg" alt="" class="w-full h-full object-cover">
+            </div>
+
+            <form id="adminForm" onsubmit="submitAdminLogin(event)" class="space-y-3 text-start">
+                <div class="text-center">
+                    <h3 class="font-display font-black text-lg text-amberGold" data-i18n="adminLoginTitle">تسجيل دخول الأدمن</h3>
+                    <p class="text-[11px] text-gray-400 mt-1" data-i18n="adminLoginSub">ادخل باسم المستخدم وكلمة مرور الأدمن</p>
+                </div>
+                <div>
+                    <label for="adminUser" class="block text-[11px] font-bold text-amberGold mb-1" data-i18n="adminUserLabel">اسم المستخدم</label>
+                    <input id="adminUser" type="text" autocomplete="username" dir="ltr" class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2.5 text-sm text-white font-bold focus:border-amberGold transition-colors">
+                </div>
+                <div>
+                    <label for="adminPass" class="block text-[11px] font-bold text-amberGold mb-1" data-i18n="adminPassLabel">كلمة المرور</label>
+                    <input id="adminPass" type="password" autocomplete="current-password" dir="ltr" class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2.5 text-sm text-white font-bold focus:border-amberGold transition-colors">
+                </div>
+                <p id="adminError" class="hidden text-red-400 text-xs font-bold text-center" data-i18n="adminWrong">اسم المستخدم أو كلمة المرور غير صحيحة</p>
+                <div class="flex gap-2 pt-1">
+                    <button type="submit" id="adminSignInBtn" class="flex-1 bg-amberGold hover:bg-amber-400 text-black rounded-xl py-2.5 text-xs font-black uppercase tracking-wider transition shadow-lg shadow-amberGold/30" data-i18n="adminLoginBtn">دخول</button>
+                    <button type="button" onclick="closeAdminModal()" class="px-4 rounded-xl border border-white/15 text-gray-300 hover:text-white hover:border-amberGold/50 text-xs font-bold transition" data-i18n="adminCancelBtn">إلغاء</button>
+                </div>
+            </form>
+
+            <div id="adminLogged" class="hidden">
+                <h3 class="font-display font-black text-lg text-amberGold" data-i18n="adminWelcome">أنت مسجل الدخول كأدمن الآن</h3>
+                <p id="adminLoggedUser" class="text-white font-black text-base my-3" dir="ltr"></p>
+                <button onclick="adminLogout()" class="w-full bg-red-500/80 hover:bg-red-500 text-white rounded-xl py-2.5 text-xs font-black uppercase tracking-wider transition" data-i18n="adminLogoutBtn">تسجيل الخروج</button>
+                <button onclick="closeAdminModal()" class="w-full mt-2 text-gray-400 hover:text-amberGold text-xs font-bold py-2 transition" data-i18n="adminCloseBtn">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة إضافة كارت فيديو -->
+    <div id="cardModal" role="dialog" aria-modal="true" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/85 backdrop-blur-md p-4" onclick="if(event.target===this) closeCardModal()">
+        <div class="glass-panel w-full max-w-sm rounded-3xl border border-amberGold/30 p-6 text-center relative">
+            <button onclick="closeCardModal()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 hover:bg-amberGold hover:text-black transition flex items-center justify-center text-white" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="text-center mb-4">
+                <div class="mx-auto w-12 h-12 rounded-2xl bg-amberGold/15 border border-amberGold/40 flex items-center justify-center text-amberGold mb-2"><i class="fa-solid fa-video text-lg"></i></div>
+                <h3 class="font-display font-black text-lg text-amberGold" data-i18n="cardTitle">إضافة كارت فيديو</h3>
+                <p class="text-[11px] text-gray-400 mt-1" data-i18n="cardSub">رقم الفيديو + رابط صورة الخلفية + رابط الفيديو</p>
+            </div>
+            <form id="cardForm" onsubmit="submitNewCard(event)" class="space-y-3 text-start">
+                <div>
+                    <label for="cardNum" class="block text-[11px] font-bold text-amberGold mb-1" data-i18n="cardNumLabel">رقم الفيديو</label>
+                    <input id="cardNum" type="number" min="1" max="9999" inputmode="numeric" dir="ltr" class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2.5 text-sm text-white font-bold focus:border-amberGold transition-colors">
+                </div>
+                <div>
+                    <label for="cardImg" class="block text-[11px] font-bold text-amberGold mb-1" data-i18n="cardImgLabel">رابط صورة الخلفية</label>
+                    <input id="cardImg" type="text" dir="ltr" placeholder="https://..." class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2.5 text-sm text-white font-bold focus:border-amberGold transition-colors">
+                </div>
+                <div>
+                    <label for="cardVideo" class="block text-[11px] font-bold text-amberGold mb-1" data-i18n="cardVideoLabel">رابط الفيديو</label>
+                    <input id="cardVideo" type="text" dir="ltr" placeholder="https://..." class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2.5 text-sm text-white font-bold focus:border-amberGold transition-colors">
+                </div>
+                <p id="cardError" class="hidden text-red-400 text-xs font-bold text-center"></p>
+                <p id="cardOk" class="hidden text-green-400 text-xs font-bold text-center"></p>
+                <div class="flex gap-2 pt-1">
+                    <button type="submit" id="cardSubmitBtn" class="flex-1 bg-amberGold hover:bg-amber-400 text-black rounded-xl py-2.5 text-xs font-black uppercase tracking-wider transition shadow-lg shadow-amberGold/30" data-i18n="cardAddBtn">إضافة</button>
+                    <button type="button" onclick="closeCardModal()" class="px-4 rounded-xl border border-white/15 text-gray-300 hover:text-white hover:border-amberGold/50 text-xs font-bold transition" data-i18n="cardCancelBtn">إلغاء</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- نافذة تشغيل الفيديو -->
     <div id="videoModal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-md p-3 sm:p-4" onclick="if(event.target===this) closeVideoModal()">
@@ -898,6 +1004,7 @@ const translations = {
             heroBtn:"استعرض أعمالي", worksSub:"أعمال مختارة", worksTitle:"أعمالي", workLabel:"العمل", contactBadge:"ابدأ مشروعك", contactTitle:"جاهز لرفع مستوى قناتك؟",
             watchVideoBtn:"شاهد الفيديو الخاص بهذا العمل", modalVideoTitle:"فيديو العمل",
             rights:"جميع الحقوق محفوظة © 2026 أَمْجَد."
+            ,adminAvatarTitle:"تسجيل دخول الأدمن", adminLoginTitle:"تسجيل دخول الأدمن", adminLoginSub:"ادخل باسم المستخدم وكلمة مرور الأدمن", adminUserLabel:"اسم المستخدم", adminPassLabel:"كلمة المرور", adminLoginBtn:"دخول", adminCancelBtn:"إلغاء", adminWrong:"اسم المستخدم أو كلمة المرور غير صحيحة", adminWelcome:"أنت مسجل الدخول كأدمن الآن", adminLogoutBtn:"تسجيل الخروج", adminCloseBtn:"إغلاق", adminNoServer:"تعذّر الوصول للخادم — تأكد أن server.js يعمل", adminTooMany:"محاولات كثيرة جداً — انتظر دقائق ثم أعد المحاولة", cardAddBtn:"إضافة", addCardBtn:"+ فيديو", cardTitle:"إضافة كارت فيديو", cardSub:"رقم الفيديو + رابط صورة الخلفية + رابط الفيديو", cardNumLabel:"رقم الفيديو", cardImgLabel:"رابط صورة الخلفية", cardVideoLabel:"رابط الفيديو", cardCancelBtn:"إلغاء", cardInvalid:"تأكد من الرقم (من 1 إلى 9999) وروابط تبدأ بـ https://", cardNoServer:"تعذّر الوصول للخادم لحفظ الكارت — تأكد أن server.js يعمل", cardSaved:"تمت إضافة الكارت ✔", cardForbidden:"صلاحيات غير كافية — سجّل دخول بحساب الأدمن", cardCustomDesc:"عمل مضاف حديثاً"
           },
           en: {
             pageTitle:"AMJAD // Professional YouTube Editing Studio", brandName:"AMJAD", headerSubtitle:"YOUTUBE EDITOR",
@@ -908,6 +1015,7 @@ const translations = {
             heroBtn:"Explore Work", worksSub:"Selected work", worksTitle:"My Work", workLabel:"Project", contactBadge:"Start Your Project", contactTitle:"Ready to Level Up Your Channel?",
             watchVideoBtn:"Watch This Project's Video", modalVideoTitle:"Project Video",
             rights:"All Rights Reserved © 2026 AMJAD."
+            ,adminAvatarTitle:"Admin login", adminLoginTitle:"Admin Sign In", adminLoginSub:"Enter the admin username and password", adminUserLabel:"Username", adminPassLabel:"Password", adminLoginBtn:"Sign In", adminCancelBtn:"Cancel", adminWrong:"Incorrect username or password", adminWelcome:"You are signed in as admin", adminLogoutBtn:"Sign Out", adminCloseBtn:"Close", adminNoServer:"Cannot reach the server — make sure server.js is running", adminTooMany:"Too many attempts — wait a few minutes and try again", cardAddBtn:"Add", addCardBtn:"+ Video", cardTitle:"Add Video Card", cardSub:"Video number + background image link + video link", cardNumLabel:"Video number", cardImgLabel:"Background image link", cardVideoLabel:"Video link", cardCancelBtn:"Cancel", cardInvalid:"Check the number (1–9999) and links starting with https://", cardNoServer:"Cannot reach the server to save the card — make sure server.js is running", cardSaved:"Card added ✔", cardForbidden:"Not authorized — sign in with the admin account", cardCustomDesc:"Recently added"
           }
 };
 
@@ -933,7 +1041,7 @@ const MOV_B = 'https://www.w3schools.com/html/movie.mp4';
 const TRENDING = 6;
 const galleryItems = FALLBACK_IMGS.map((fb, i) => ({
           n: i + 1,
-          img:  (i + 1) + 'P.png',
+          img: 'Picture/' + (i + 1) + 'P.png',
           fallback: 'https://picsum.photos/id/' + fb,
           video: (VIDEO_LINKS[i] || 'Video/' + (i + 1) + 'V.mp4').trim(),
           fallbackVideo: (i % 2 === 0) ? MOV_A : MOV_B
@@ -941,7 +1049,8 @@ const galleryItems = FALLBACK_IMGS.map((fb, i) => ({
 
 const store = {
           get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
-          set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* ignore */ } }
+          set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* ignore */ } },
+          remove(k) { try { localStorage.removeItem(k); } catch (e) { /* ignore */ } }
 };
 
 let currentLang = store.get('amgad_lang') === 'ar' ? 'ar' : 'en';
@@ -977,6 +1086,9 @@ function applyLanguage() {
           $('langText').textContent = rtl ? 'EN' : 'AR';
           $('themeBtn').title = t.themeTitle;
           $('langBtn').title = t.langTitle;
+          $('adminAvatar').title = t.adminAvatarTitle;
+          $('adminError').textContent = t[adminErrorKey];
+          $('cardError').textContent = t[cardErrorKey];
           $('brandName').textContent = t.brandName;
           $('heroBrandName').textContent = t.brandName;
           document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1073,7 +1185,7 @@ function renderWorks() {
             row.className = 'work-row' + (i % 2 ? ' flip' : '');
             row.innerHTML =
               `<div class="work-card" role="button" tabindex="0">` +
-                `<img src="${item.img}" onerror="this.onerror=null;this.src='${item.fallback}/800/450'" alt="" loading="lazy" draggable="false">` +
+                `<img src="${item.img}"${item.fallback ? ` onerror="this.onerror=null;this.src='${item.fallback}/800/450'"` : ' onerror="this.onerror=null"'} alt="" loading="lazy" draggable="false">` +
                 `<span class="work-num">${key.padStart(2, '0')}</span>` +
                 (item.n === TRENDING ? '<span class="hot-badge">🔥</span>' : '') +
                 `<span class="work-play"><i class="fa-solid fa-play"></i></span><span class="work-glare"></span>` +
@@ -1162,6 +1274,8 @@ function createHeroParticles() {
 }
 
 document.addEventListener('keydown', e => {
+          if (e.key === 'Escape' && cardModalOpen()) { closeCardModal(); return; }
+          if (e.key === 'Escape' && adminModalOpen()) { closeAdminModal(); return; }
           if (e.key === 'Escape' && modalOpen()) closeVideoModal();
 });
 
@@ -1177,8 +1291,184 @@ function protectVideos() {
           document.querySelectorAll('video').forEach(v => v.addEventListener('loadedmetadata', apply));
 }
 
+/* ============ تسجيل دخول الأدمن ============ */
+/* الحساب الوحيد يُضبط في server.js (أو عبر ADMIN_USER / ADMIN_PASS في البيئة) */
+const ADMIN_SESSION_KEY = 'amgad_admin';
+let adminErrorKey = 'adminWrong';
+let cardErrorKey = 'cardInvalid';
+const isAdmin = () => !!store.get(ADMIN_SESSION_KEY);
+
+function updateAdminAvatar() {
+          $('adminAvatar').classList.toggle('is-admin', isAdmin());
+          $('addCardBtn').classList.toggle('hidden', !isAdmin());
+}
+function adminModalOpen() {
+          return $('adminModal').classList.contains('flex');
+}
+function openAdminLogin(e) {
+          if (e) { e.preventDefault(); e.stopPropagation(); }
+          const loggedIn = isAdmin();
+          $('adminForm').classList.toggle('hidden', loggedIn);
+          $('adminLogged').classList.toggle('hidden', !loggedIn);
+          $('adminError').classList.add('hidden');
+          $('adminPass').value = '';
+          if (loggedIn) $('adminLoggedUser').textContent = store.get(ADMIN_SESSION_KEY) || 'admin';
+          else $('adminUser').value = '';
+          $('adminModal').classList.remove('hidden');
+          $('adminModal').classList.add('flex');
+          if (!loggedIn) setTimeout(() => $('adminUser').focus(), 60);
+}
+function closeAdminModal() {
+          $('adminModal').classList.remove('flex');
+          $('adminModal').classList.add('hidden');
+          $('adminPass').value = '';
+}
+function setAdminError(key) {
+          adminErrorKey = key;
+          $('adminError').textContent = translations[currentLang][key] || key;
+          $('adminError').classList.remove('hidden');
+}
+function submitAdminLogin(e) {
+          if (e) e.preventDefault();
+          const u = $('adminUser').value.trim();
+          const p = $('adminPass').value;
+          const btn = $('adminSignInBtn');
+          adminErrorKey = 'adminWrong';
+          $('adminError').classList.add('hidden');
+          btn.disabled = true;
+          fetch('api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: u, password: p })
+          })
+            .then(r => {
+              if (r.status === 401) throw 401;
+              if (r.status === 429) throw 429;
+              if (!r.ok) throw 0;
+              return r.json();
+            })
+            .then(d => {
+              store.set(ADMIN_SESSION_KEY, (d && d.username) || u);
+              $('adminPass').value = '';
+              updateAdminAvatar();
+              $('adminForm').classList.add('hidden');
+              $('adminLogged').classList.remove('hidden');
+              $('adminLoggedUser').textContent = (d && d.username) || u;
+            })
+            .catch(status => {
+              setAdminError(status === 429 ? 'adminTooMany' : status === 401 ? 'adminWrong' : 'adminNoServer');
+              $('adminPass').value = '';
+              $('adminPass').focus();
+            })
+            .finally(() => { btn.disabled = false; });
+}
+function adminLogout() {
+          fetch('api/logout', { method: 'POST' }).catch(() => {});
+          store.remove(ADMIN_SESSION_KEY);
+          updateAdminAvatar();
+          closeAdminModal();
+}
+
+/* ========== كروت الفيديو المُضافة (باك اند) ========== */
+function refreshWorks() {
+          $('worksList').innerHTML = '';
+          rows.length = 0;
+          renderWorks();
+          onScroll();
+}
+/* تدمج الكروت القادمة من الخادم في قائمة الأعمال (نفس الرقم = استبدال) */
+function mergeCards(cards) {
+          cards.forEach(c => {
+            if (!c || !Number.isInteger(c.n) || c.n < 1) return;
+            const item = { n: c.n, img: String(c.img), video: String(c.video), fallback: '', fallbackVideo: String(c.video), custom: true };
+            const i = galleryItems.findIndex(x => x.n === c.n);
+            if (i >= 0) galleryItems[i] = item; else galleryItems.push(item);
+            translations.ar['galleryDesc' + c.n] = translations.ar.cardCustomDesc;
+            translations.en['galleryDesc' + c.n] = translations.en.cardCustomDesc;
+            translations.ar['galleryTitle' + c.n] = translations.ar['gallerySub' + c.n] = String(c.n);
+            translations.en['galleryTitle' + c.n] = translations.en['gallerySub' + c.n] = String(c.n);
+          });
+          galleryItems.sort((a, b) => a.n - b.n);
+          refreshWorks();
+          applyLanguage();
+}
+function loadCustomCards() {
+          fetch('api/cards').then(r => (r && r.ok) ? r.json() : null)
+            .then(d => { if (d && Array.isArray(d.cards) && d.cards.length) mergeCards(d.cards); })
+            .catch(() => { /* الخادم مطفأ: نبقي الكروت الأساسية فقط */ });
+}
+function cardModalOpen() {
+          return $('cardModal').classList.contains('flex');
+}
+function openAddCard(e) {
+          if (e) { e.preventDefault(); e.stopPropagation(); }
+          if (adminModalOpen()) closeAdminModal();
+          $('cardError').classList.add('hidden');
+          $('cardOk').classList.add('hidden');
+          $('cardNum').value = '';
+          $('cardImg').value = '';
+          $('cardVideo').value = '';
+          $('cardModal').classList.remove('hidden');
+          $('cardModal').classList.add('flex');
+          setTimeout(() => $('cardNum').focus(), 60);
+}
+function closeCardModal() {
+          $('cardModal').classList.remove('flex');
+          $('cardModal').classList.add('hidden');
+}
+function cardFail(key) {
+          cardErrorKey = key;
+          $('cardError').textContent = translations[currentLang][key] || key;
+          $('cardError').classList.remove('hidden');
+          $('cardOk').classList.add('hidden');
+}
+function submitNewCard(e) {
+          if (e) e.preventDefault();
+          const n = parseInt($('cardNum').value, 10);
+          const img = $('cardImg').value.trim();
+          const video = $('cardVideo').value.trim();
+          const isUrl = u => /^https?:\/\/\S+$/i.test(u) && u.length <= 2048;
+          if (!(n >= 1 && n <= 9999) || !isUrl(img) || !isUrl(video)) { cardFail('cardInvalid'); return; }
+          $('cardError').classList.add('hidden');
+          const btn = $('cardSubmitBtn');
+          btn.disabled = true;
+          fetch('api/cards', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ n: n, img: img, video: video })
+          })
+            .then(r => {
+              if (r.status === 401) throw 401;
+              if (r.status === 400) throw 400;
+              if (!r.ok) throw 0;
+              return r.json();
+            })
+            .then(d => {
+              mergeCards((d && d.cards) || [{ n: n, img: img, video: video }]);
+              $('cardOk').textContent = translations[currentLang].cardSaved;
+              $('cardOk').classList.remove('hidden');
+              $('cardNum').value = '';
+              $('cardImg').value = '';
+              $('cardVideo').value = '';
+            })
+            .catch(status => cardFail(status === 401 ? 'cardForbidden' : status === 400 ? 'cardInvalid' : 'cardNoServer'))
+            .finally(() => { btn.disabled = false; });
+}
+
+/* نتحقق من الجلسة على الخادم عند فتح الصفحة */
+function checkAdminSession() {
+          fetch('api/me').then(r => (r && r.ok) ? r.json() : null).then(d => {
+            if (d && d.authenticated) store.set(ADMIN_SESSION_KEY, d.username || 'admin');
+            else store.remove(ADMIN_SESSION_KEY);
+            updateAdminAvatar();
+          }).catch(() => { updateAdminAvatar(); });
+}
+
 /* للـ onclick في HTML */
-Object.assign(window, { goToPage, toggleTheme, toggleLanguage, openVideo, closeVideoModal });
+Object.assign(window, { goToPage, toggleTheme, toggleLanguage, openVideo, closeVideoModal, openAdminLogin, closeAdminModal, submitAdminLogin, adminLogout, openAddCard, closeCardModal, submitNewCard });
+updateAdminAvatar();
+checkAdminSession();
+loadCustomCards();
 
 protectVideos();
 applyTheme();
