@@ -1393,7 +1393,7 @@ function mergeCards(cards) {
           applyLanguage();
 }
 function loadCustomCards() {
-          fetch('api/cards').then(r => (r && r.ok) ? r.json() : null)
+          fetch('https://amjid-backend.vercel.app/api/cards').then(r => (r && r.ok) ? r.json() : null)
             .then(d => { if (d && Array.isArray(d.cards) && d.cards.length) mergeCards(d.cards); })
             .catch(() => { /* الخادم مطفأ: نبقي الكروت الأساسية فقط */ });
 }
@@ -1432,7 +1432,7 @@ function submitNewCard(e) {
           $('cardError').classList.add('hidden');
           const btn = $('cardSubmitBtn');
           btn.disabled = true;
-          fetch('api/cards', {
+          fetch('https://amjid-backend.vercel.app/api/cards', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ n: n, img: img, video: video })
@@ -1457,7 +1457,7 @@ function submitNewCard(e) {
 
 /* نتحقق من الجلسة على الخادم عند فتح الصفحة */
 function checkAdminSession() {
-          fetch('api/me').then(r => (r && r.ok) ? r.json() : null).then(d => {
+          fetch('https://amjid-backend.vercel.app/api/me').then(r => (r && r.ok) ? r.json() : null).then(d => {
             if (d && d.authenticated) store.set(ADMIN_SESSION_KEY, d.username || 'admin');
             else store.remove(ADMIN_SESSION_KEY);
             updateAdminAvatar();
