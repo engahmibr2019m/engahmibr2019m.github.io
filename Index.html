@@ -20,11 +20,11 @@
     <script>
 // @ts-nocheck
 if (window.tailwind) tailwind.config = {
-                  darkMode: 'class',
-                  theme: { extend: {
-                    colors: { void:'#030305', panelDark:'#090a0f', amberGold:'#e6a13b' },
-                    fontFamily: { display:['Cairo','sans-serif'], sans:['Tajawal','sans-serif'] }
-                  } }
+                          darkMode: 'class',
+                          theme: { extend: {
+                            colors: { void:'#030305', panelDark:'#090a0f', amberGold:'#e6a13b' },
+                            fontFamily: { display:['Cairo','sans-serif'], sans:['Tajawal','sans-serif'] }
+                          } }
 };
     </script>
     <style>
@@ -575,18 +575,18 @@ if (window.tailwind) tailwind.config = {
             color: #fff
         }
 
-        .admin-btn-edit:hover {
-            background: #2563eb
-        }
+            .admin-btn-edit:hover {
+                background: #2563eb
+            }
 
         .admin-btn-delete {
             background: #ef4444;
             color: #fff
         }
 
-        .admin-btn-delete:hover {
-            background: #dc2626
-        }
+            .admin-btn-delete:hover {
+                background: #dc2626
+            }
         /* حركة الظهور من الجنب */
         .reveal {
             opacity: 0;
@@ -1040,40 +1040,40 @@ const inside = (e, sel) => e.target instanceof Element && !!e.target.closest(sel
 
 /** @type {Record<string, Record<string, string>>} */
 const translations = {
-          ar: {
-            pageTitle:"أمجد // استوديو مونتاج اليوتيوب الاحترافي", brandName:"AMJAD", headerSubtitle:"YOUTUBE EDITOR",
-            navHome:"الرئيسية", navGallery:"المعرض", navContact:"تواصل معي",
-            themeTitle:"تبديل الوضع", langTitle:"تغيير اللغة", prev:"السابق", next:"التالي",
-            heroBadge:"مونتير ومخرج محتوى يوتيوب",
-            heroDesc:"أحول الفيديوهات الخام إلى إبداعات بصرية تخطف انتباه المشاهد وترفع معدل الاحتفاظ بالجمهور على قناتك.",
-            heroBtn:"استعرض أعمالي", worksSub:"أعمال مختارة", worksTitle:"أعمالي", workLabel:"العمل", contactBadge:"ابدأ مشروعك", contactTitle:"جاهز لرفع مستوى قناتك؟",
-            watchVideoBtn:"شاهد الفيديو الخاص بهذا العمل", modalVideoTitle:"فيديو العمل",
-            rights:"جميع الحقوق محفوظة © 2026 أَمْجَد."
-            ,adminAvatarTitle:"تسجيل دخول الأدمن", adminLoginTitle:"تسجيل دخول الأدمن", adminLoginSub:"ادخل باسم المستخدم وكلمة مرور الأدمن", adminUserLabel:"اسم المستخدم", adminPassLabel:"كلمة المرور", adminLoginBtn:"دخول", adminCancelBtn:"إلغاء", adminWrong:"اسم المستخدم أو كلمة المرور غير صحيحة", adminWelcome:"أنت مسجل الدخول كأدمن الآن", adminLogoutBtn:"تسجيل الخروج", adminCloseBtn:"إغلاق", adminNoServer:"تعذّر الوصول للخادم — تأكد أن server.js يعمل", adminTooMany:"محاولات كثيرة جداً — انتظر دقائق ثم أعد المحاولة", cardAddBtn:"إضافة", addCardBtn:"+ فيديو", cardTitle:"إضافة كارت فيديو", cardSub:"رقم الفيديو + رابط صورة الخلفية + رابط الفيديو", cardNumLabel:"رقم الفيديو", cardImgLabel:"رابط صورة الخلفية", cardVideoLabel:"رابط الفيديو", cardCancelBtn:"إلغاء", cardInvalid:"تأكد من الرقم (من 1 إلى 9999) وروابط تبدأ بـ https://", cardNoServer:"تعذّر الوصول للخادم لحفظ الكارت — تأكد أن server.js يعمل", cardSaved:"تمت إضافة الكارت ✔", cardForbidden:"صلاحيات غير كافية — سجّل دخول بحساب الأدمن", cardCustomDesc:"عمل مضاف حديثاً", cardEditTitle:"تعديل كارت فيديو", cardEditBtn:"حفظ التعديل", cardDeleteBtn:"حذف", cardDeleteConfirm:"هل أنت متأكد من حذف هذا الكارت؟", cardDeleted:"تم حذف الكارت ✔", cardUpdated:"تم تحديث الكارت ✔"
-          },
-          en: {
-            pageTitle:"AMJAD // Professional YouTube Editing Studio", brandName:"AMJAD", headerSubtitle:"YOUTUBE EDITOR",
-            navHome:"Home", navGallery:"Gallery", navContact:"Contact",
-            themeTitle:"Toggle theme", langTitle:"Switch language", prev:"Previous", next:"Next",
-            heroBadge:"YouTube Content Editor & Director",
-            heroDesc:"I transform raw footage into captivating visual masterpieces that boost audience retention on your channel.",
-            heroBtn:"Explore Work", worksSub:"Selected work", worksTitle:"My Work", workLabel:"Project", contactBadge:"Start Your Project", contactTitle:"Ready to Level Up Your Channel?",
-            watchVideoBtn:"Watch This Project's Video", modalVideoTitle:"Project Video",
-            rights:"All Rights Reserved © 2026 AMJAD."
-            ,adminAvatarTitle:"Admin login", adminLoginTitle:"Admin Sign In", adminLoginSub:"Enter the admin username and password", adminUserLabel:"Username", adminPassLabel:"Password", adminLoginBtn:"Sign In", adminCancelBtn:"Cancel", adminWrong:"Incorrect username or password", adminWelcome:"You are signed in as admin", adminLogoutBtn:"Sign Out", adminCloseBtn:"Close", adminNoServer:"Cannot reach the server — make sure server.js is running", adminTooMany:"Too many attempts — wait a few minutes and try again", cardAddBtn:"Add", addCardBtn:"+ Video", cardTitle:"Add Video Card", cardSub:"Video number + background image link + video link", cardNumLabel:"Video number", cardImgLabel:"Background image link", cardVideoLabel:"Video link", cardCancelBtn:"Cancel", cardInvalid:"Check the number (1–9999) and links starting with https://", cardNoServer:"Cannot reach the server to save the card — make sure server.js is running", cardSaved:"Card added ✔", cardForbidden:"Not authorized — sign in with the admin account", cardCustomDesc:"Recently added", cardEditTitle:"Edit Video Card", cardEditBtn:"Save Changes", cardDeleteBtn:"Delete", cardDeleteConfirm:"Are you sure you want to delete this card?", cardDeleted:"Card deleted ✔", cardUpdated:"Card updated ✔"
-          }
+                  ar: {
+                    pageTitle:"أمجد // استوديو مونتاج اليوتيوب الاحترافي", brandName:"AMJAD", headerSubtitle:"YOUTUBE EDITOR",
+                    navHome:"الرئيسية", navGallery:"المعرض", navContact:"تواصل معي",
+                    themeTitle:"تبديل الوضع", langTitle:"تغيير اللغة", prev:"السابق", next:"التالي",
+                    heroBadge:"مونتير ومخرج محتوى يوتيوب",
+                    heroDesc:"أحول الفيديوهات الخام إلى إبداعات بصرية تخطف انتباه المشاهد وترفع معدل الاحتفاظ بالجمهور على قناتك.",
+                    heroBtn:"استعرض أعمالي", worksSub:"أعمال مختارة", worksTitle:"أعمالي", workLabel:"العمل", contactBadge:"ابدأ مشروعك", contactTitle:"جاهز لرفع مستوى قناتك؟",
+                    watchVideoBtn:"شاهد الفيديو الخاص بهذا العمل", modalVideoTitle:"فيديو العمل",
+                    rights:"جميع الحقوق محفوظة © 2026 أَمْجَد."
+                    ,adminAvatarTitle:"تسجيل دخول الأدمن", adminLoginTitle:"تسجيل دخول الأدمن", adminLoginSub:"ادخل باسم المستخدم وكلمة مرور الأدمن", adminUserLabel:"اسم المستخدم", adminPassLabel:"كلمة المرور", adminLoginBtn:"دخول", adminCancelBtn:"إلغاء", adminWrong:"اسم المستخدم أو كلمة المرور غير صحيحة", adminWelcome:"أنت مسجل الدخول كأدمن الآن", adminLogoutBtn:"تسجيل الخروج", adminCloseBtn:"إغلاق", adminNoServer:"تعذّر الوصول للخادم — تأكد أن server.js يعمل", adminTooMany:"محاولات كثيرة جداً — انتظر دقائق ثم أعد المحاولة", cardAddBtn:"إضافة", addCardBtn:"+ فيديو", cardTitle:"إضافة كارت فيديو", cardSub:"رقم الفيديو + رابط صورة الخلفية + رابط الفيديو", cardNumLabel:"رقم الفيديو", cardImgLabel:"رابط صورة الخلفية", cardVideoLabel:"رابط الفيديو", cardCancelBtn:"إلغاء", cardInvalid:"تأكد من الرقم (من 1 إلى 9999) وروابط تبدأ بـ https://", cardNoServer:"تعذّر الوصول للخادم لحفظ الكارت — تأكد أن server.js يعمل", cardSaved:"تمت إضافة الكارت ✔", cardForbidden:"صلاحيات غير كافية — سجّل دخول بحساب الأدمن", cardCustomDesc:"عمل مضاف حديثاً", cardEditTitle:"تعديل كارت فيديو", cardEditBtn:"حفظ التعديل", cardDeleteBtn:"حذف", cardDeleteConfirm:"هل أنت متأكد من حذف هذا الكارت؟", cardDeleted:"تم حذف الكارت ✔", cardUpdated:"تم تحديث الكارت ✔"
+                  },
+                  en: {
+                    pageTitle:"AMJAD // Professional YouTube Editing Studio", brandName:"AMJAD", headerSubtitle:"YOUTUBE EDITOR",
+                    navHome:"Home", navGallery:"Gallery", navContact:"Contact",
+                    themeTitle:"Toggle theme", langTitle:"Switch language", prev:"Previous", next:"Next",
+                    heroBadge:"YouTube Content Editor & Director",
+                    heroDesc:"I transform raw footage into captivating visual masterpieces that boost audience retention on your channel.",
+                    heroBtn:"Explore Work", worksSub:"Selected work", worksTitle:"My Work", workLabel:"Project", contactBadge:"Start Your Project", contactTitle:"Ready to Level Up Your Channel?",
+                    watchVideoBtn:"Watch This Project's Video", modalVideoTitle:"Project Video",
+                    rights:"All Rights Reserved © 2026 AMJAD."
+                    ,adminAvatarTitle:"Admin login", adminLoginTitle:"Admin Sign In", adminLoginSub:"Enter the admin username and password", adminUserLabel:"Username", adminPassLabel:"Password", adminLoginBtn:"Sign In", adminCancelBtn:"Cancel", adminWrong:"Incorrect username or password", adminWelcome:"You are signed in as admin", adminLogoutBtn:"Sign Out", adminCloseBtn:"Close", adminNoServer:"Cannot reach the server — make sure server.js is running", adminTooMany:"Too many attempts — wait a few minutes and try again", cardAddBtn:"Add", addCardBtn:"+ Video", cardTitle:"Add Video Card", cardSub:"Video number + background image link + video link", cardNumLabel:"Video number", cardImgLabel:"Background image link", cardVideoLabel:"Video link", cardCancelBtn:"Cancel", cardInvalid:"Check the number (1–9999) and links starting with https://", cardNoServer:"Cannot reach the server to save the card — make sure server.js is running", cardSaved:"Card added ✔", cardForbidden:"Not authorized — sign in with the admin account", cardCustomDesc:"Recently added", cardEditTitle:"Edit Video Card", cardEditBtn:"Save Changes", cardDeleteBtn:"Delete", cardDeleteConfirm:"Are you sure you want to delete this card?", cardDeleted:"Card deleted ✔", cardUpdated:"Card updated ✔"
+                  }
 };
 
 const GALLERY_DESC = {
-          ar: ["أحد أعمالي مع كلاوس.","أحد أعمالي مع عمر أبو الرب.","أحد أعمالي مع هيكا.","أحد أعمالي السينمائية.","أحد أعمالي مع عمر أبو الرب.","أحد أعمالي مع هيكا.","أحد أعمالي مع هيكا.","أحد أعمالي مع حيدر جنداوي.","أحد أعمالي مع عمر أبو الرب.","أحد أعمالي مع عمر أبو الرب."],
-          en: ["One of my projects with Klaus.","One of my projects with Omar Abu Al-Rub.","One of my projects with Heka.","One of my cinematic projects.","One of my projects with Omar Abu Al-Rub.","One of my projects with Heka.","One of my projects with Heka.","One of my projects with Haider Jindawi.","One of my projects with Omar Abu Al-Rub.","One of my projects with Omar Abu Al-Rub."]
+                  ar: ["أحد أعمالي مع كلاوس.","أحد أعمالي مع عمر أبو الرب.","أحد أعمالي مع هيكا.","أحد أعمالي السينمائية.","أحد أعمالي مع عمر أبو الرب.","أحد أعمالي مع هيكا.","أحد أعمالي مع هيكا.","أحد أعمالي مع حيدر جنداوي.","أحد أعمالي مع عمر أبو الرب.","أحد أعمالي مع عمر أبو الرب."],
+                  en: ["One of my projects with Klaus.","One of my projects with Omar Abu Al-Rub.","One of my projects with Heka.","One of my cinematic projects.","One of my projects with Omar Abu Al-Rub.","One of my projects with Heka.","One of my projects with Heka.","One of my projects with Haider Jindawi.","One of my projects with Omar Abu Al-Rub.","One of my projects with Omar Abu Al-Rub."]
 };
 for (let n = 1; n <= 10; n++) {
-          ['ar', 'en'].forEach(l => {
-            translations[l]['galleryTitle' + n] = String(n);
-            translations[l]['gallerySub' + n] = String(n);
-            translations[l]['galleryDesc' + n] = GALLERY_DESC[l][n - 1];
-          });
+                  ['ar', 'en'].forEach(l => {
+                    translations[l]['galleryTitle' + n] = String(n);
+                    translations[l]['gallerySub' + n] = String(n);
+                    translations[l]['galleryDesc' + n] = GALLERY_DESC[l][n - 1];
+                  });
 }
 
 // لينكات فيديوهات المعرض (يوتيوب / جوجل درايف / mp4 مباشر)
@@ -1082,15 +1082,15 @@ const VIDEO_LINKS = [1,2,3,4,5,6,7,8,9,10].map(n => BASE + n + 'V.mp4');
 
 const TRENDING = 6;
 const galleryItems = [1,2,3,4,5,6,7,8,9,10].map(n => ({
-          n: n,
-          img: 'Picture/' + n + 'P.png',
-          video: (VIDEO_LINKS[n - 1] || 'Video/' + n + 'V.mp4').trim()
+                  n: n,
+                  img: 'Picture/' + n + 'P.png',
+                  video: (VIDEO_LINKS[n - 1] || 'Video/' + n + 'V.mp4').trim()
 }));
 
 const store = {
-          get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
-          set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* ignore */ } },
-          remove(k) { try { localStorage.removeItem(k); } catch (e) { /* ignore */ } }
+                  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+                  set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* ignore */ } },
+                  remove(k) { try { localStorage.removeItem(k); } catch (e) { /* ignore */ } }
 };
 
 let currentLang = store.get('amgad_lang') === 'ar' ? 'ar' : 'en';
@@ -1100,68 +1100,68 @@ const isRTL = () => document.documentElement.dir === 'rtl';
 
 /* الثيم */
 function applyTheme() {
-          const root = document.documentElement;
-          root.classList.toggle('light', currentTheme === 'light');
-          root.classList.toggle('dark', currentTheme !== 'light');
-          $('themeIcon').className = 'fa-solid text-sm ' + (currentTheme === 'light' ? 'fa-moon' : 'fa-sun');
+                  const root = document.documentElement;
+                  root.classList.toggle('light', currentTheme === 'light');
+                  root.classList.toggle('dark', currentTheme !== 'light');
+                  $('themeIcon').className = 'fa-solid text-sm ' + (currentTheme === 'light' ? 'fa-moon' : 'fa-sun');
 }
 function toggleTheme() {
-          currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-          store.set('amgad_theme', currentTheme);
-          applyTheme();
+                  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+                  store.set('amgad_theme', currentTheme);
+                  applyTheme();
 }
 
 /* اللغة */
 function toggleLanguage() {
-          currentLang = currentLang === 'ar' ? 'en' : 'ar';
-          store.set('amgad_lang', currentLang);
-          applyLanguage();
+                  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+                  store.set('amgad_lang', currentLang);
+                  applyLanguage();
 }
 function applyLanguage() {
-          const t = translations[currentLang];
-          const rtl = currentLang === 'ar';
-          const html = $('htmlRoot');
-          html.setAttribute('lang', currentLang);
-          html.setAttribute('dir', rtl ? 'rtl' : 'ltr');
-          $('langText').textContent = rtl ? 'EN' : 'AR';
-          $('themeBtn').title = t.themeTitle;
-          $('langBtn').title = t.langTitle;
-          $('adminAvatar').title = t.adminAvatarTitle;
-          $('adminError').textContent = t[adminErrorKey];
-          $('cardError').textContent = t[cardErrorKey];
-          $('brandName').textContent = t.brandName;
-          $('heroBrandName').textContent = t.brandName;
-          document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.getAttribute('data-i18n') || '';
-            if (t[key]) el.textContent = t[key];
-          });
-          document.querySelectorAll('[data-label]').forEach(el => {
-            el.textContent = t.workLabel + ' ' + String(/** @type {HTMLElement} */ (el).dataset.label).padStart(2, '0');
-          });
-          document.querySelectorAll('[data-desc]').forEach(el => {
-            el.textContent = t['galleryDesc' + /** @type {HTMLElement} */ (el).dataset.desc];
-          });
-          document.title = t.pageTitle;
+                  const t = translations[currentLang];
+                  const rtl = currentLang === 'ar';
+                  const html = $('htmlRoot');
+                  html.setAttribute('lang', currentLang);
+                  html.setAttribute('dir', rtl ? 'rtl' : 'ltr');
+                  $('langText').textContent = rtl ? 'EN' : 'AR';
+                  $('themeBtn').title = t.themeTitle;
+                  $('langBtn').title = t.langTitle;
+                  $('adminAvatar').title = t.adminAvatarTitle;
+                  $('adminError').textContent = t[adminErrorKey];
+                  $('cardError').textContent = t[cardErrorKey];
+                  $('brandName').textContent = t.brandName;
+                  $('heroBrandName').textContent = t.brandName;
+                  document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n') || '';
+                    if (t[key]) el.textContent = t[key];
+                  });
+                  document.querySelectorAll('[data-label]').forEach(el => {
+                    el.textContent = t.workLabel + ' ' + String(/** @type {HTMLElement} */ (el).dataset.label).padStart(2, '0');
+                  });
+                  document.querySelectorAll('[data-desc]').forEach(el => {
+                    el.textContent = t['galleryDesc' + /** @type {HTMLElement} */ (el).dataset.desc];
+                  });
+                  document.title = t.pageTitle;
 }
 /* التنقل: صفحات متصلة بتمرير طبيعي */
 const SECTIONS = ['home', 'works', 'contact'];
 function goToPage(i) {
-          const id = SECTIONS[Math.max(0, Math.min(2, i))];
-          $(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  const id = SECTIONS[Math.max(0, Math.min(2, i))];
+                  $(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 function markActive(p) {
-          document.querySelectorAll('[data-page]').forEach(el => {
-            el.classList.toggle('is-active', Number(/** @type {HTMLElement} */ (el).dataset.page) === p);
-          });
+                  document.querySelectorAll('[data-page]').forEach(el => {
+                    el.classList.toggle('is-active', Number(/** @type {HTMLElement} */ (el).dataset.page) === p);
+                  });
 }
 function onScroll() {
-          const y = window.scrollY + window.innerHeight * 0.4;
-          let p = 0;
-          SECTIONS.forEach((id, i) => { if ($(id).offsetTop <= y) p = i; });
-          markActive(p);
-          const h = document.documentElement.scrollHeight - window.innerHeight;
-          requestAnimate();
-          $('progress').style.transform = 'scaleX(' + (h > 0 ? window.scrollY / h : 0) + ')';
+                  const y = window.scrollY + window.innerHeight * 0.4;
+                  let p = 0;
+                  SECTIONS.forEach((id, i) => { if ($(id).offsetTop <= y) p = i; });
+                  markActive(p);
+                  const h = document.documentElement.scrollHeight - window.innerHeight;
+                  requestAnimate();
+                  $('progress').style.transform = 'scaleX(' + (h > 0 ? window.scrollY / h : 0) + ')';
 }
 
 /* حركة الكروت: مرتبطة بالتمرير وبتتكرر كل مرة (لفوق ولتحت) */
@@ -1171,163 +1171,163 @@ const ease = t => t * t * (3 - 2 * t);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let ticking = false;
 function animateWorks() {
-          ticking = false;
-          if (reduceMotion) return;
-          const vh = window.innerHeight, mobile = window.innerWidth < 768;
-          const K = mobile ? 70 : 190, R = mobile ? 10 : 26;
-          rows.forEach(r => {
-            const rect = r.row.getBoundingClientRect();
-            if (rect.bottom < -250 || rect.top > vh + 250) return;
-            const d = (rect.top + rect.height / 2 - vh / 2) / (vh / 2);
-            const m = Math.abs(d);
-            const a = ease(clamp((m - 0.3) / 0.7, 0, 1));
-            const o = 1 - ease(clamp((m - 0.55) / 0.45, 0, 1)) * 0.97;
-            const st = r.card.style;
-            st.setProperty('--tx', (r.side * a * K) + 'px');
-            st.setProperty('--ry', (r.side * a * R) + 'deg');
-            st.setProperty('--sc', String(1 - a * 0.18));
-            st.setProperty('--op', String(o));
-            st.setProperty('--py', (clamp(d, -1.2, 1.2) * -5) + '%');
-            st.setProperty('--sh', (clamp(d, -1.5, 1.5) * 130) + '%');
-            r.parts.forEach((el, j) => {
-              const e = /** @type {HTMLElement} */ (el);
-              e.style.transform = 'translate3d(' + (-r.side * a * K * (0.8 + j * 0.25)) + 'px,' + (d * (12 + j * 10)) + 'px,0)';
-              e.style.opacity = String(clamp(1 - ease(clamp((m - 0.4 - j * 0.05) / 0.5, 0, 1)), 0, 1));
-            });
-          });
+                  ticking = false;
+                  if (reduceMotion) return;
+                  const vh = window.innerHeight, mobile = window.innerWidth < 768;
+                  const K = mobile ? 70 : 190, R = mobile ? 10 : 26;
+                  rows.forEach(r => {
+                    const rect = r.row.getBoundingClientRect();
+                    if (rect.bottom < -250 || rect.top > vh + 250) return;
+                    const d = (rect.top + rect.height / 2 - vh / 2) / (vh / 2);
+                    const m = Math.abs(d);
+                    const a = ease(clamp((m - 0.3) / 0.7, 0, 1));
+                    const o = 1 - ease(clamp((m - 0.55) / 0.45, 0, 1)) * 0.97;
+                    const st = r.card.style;
+                    st.setProperty('--tx', (r.side * a * K) + 'px');
+                    st.setProperty('--ry', (r.side * a * R) + 'deg');
+                    st.setProperty('--sc', String(1 - a * 0.18));
+                    st.setProperty('--op', String(o));
+                    st.setProperty('--py', (clamp(d, -1.2, 1.2) * -5) + '%');
+                    st.setProperty('--sh', (clamp(d, -1.5, 1.5) * 130) + '%');
+                    r.parts.forEach((el, j) => {
+                      const e = /** @type {HTMLElement} */ (el);
+                      e.style.transform = 'translate3d(' + (-r.side * a * K * (0.8 + j * 0.25)) + 'px,' + (d * (12 + j * 10)) + 'px,0)';
+                      e.style.opacity = String(clamp(1 - ease(clamp((m - 0.4 - j * 0.05) / 0.5, 0, 1)), 0, 1));
+                    });
+                  });
 }
 function requestAnimate() {
-          if (!ticking) { ticking = true; requestAnimationFrame(animateWorks); }
+                  if (!ticking) { ticking = true; requestAnimationFrame(animateWorks); }
 }
 /* ميلان ثلاثي الأبعاد + لمعة مع حركة الماوس */
 function enableTilt(card) {
-          if (!window.matchMedia('(hover:hover)').matches) return;
-          card.addEventListener('mousemove', e => {
-            const r = card.getBoundingClientRect();
-            const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-            card.style.setProperty('--mry', ((x - 0.5) * 16) + 'deg');
-            card.style.setProperty('--mrx', ((0.5 - y) * 12) + 'deg');
-            card.style.setProperty('--mx', (x * 100) + '%');
-            card.style.setProperty('--my', (y * 100) + '%');
-          });
-          card.addEventListener('mouseleave', () => {
-            card.style.setProperty('--mry', '0deg');
-            card.style.setProperty('--mrx', '0deg');
-          });
+                  if (!window.matchMedia('(hover:hover)').matches) return;
+                  card.addEventListener('mousemove', e => {
+                    const r = card.getBoundingClientRect();
+                    const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+                    card.style.setProperty('--mry', ((x - 0.5) * 16) + 'deg');
+                    card.style.setProperty('--mrx', ((0.5 - y) * 12) + 'deg');
+                    card.style.setProperty('--mx', (x * 100) + '%');
+                    card.style.setProperty('--my', (y * 100) + '%');
+                  });
+                  card.addEventListener('mouseleave', () => {
+                    card.style.setProperty('--mry', '0deg');
+                    card.style.setProperty('--mrx', '0deg');
+                  });
 }
 
 /* الأعمال: فيديو + كلام بالتبادل يمين/يسار */
 function renderWorks() {
-          const wrap = $('worksList');
-          galleryItems.forEach((item, i) => {
-            const key = String(item.n);
-            const row = document.createElement('article');
-            row.className = 'work-row' + (i % 2 ? ' flip' : '');
-            row.innerHTML =
-              `<div class="work-card" role="button" tabindex="0">` +
-                `<img src="${item.img}" onerror="this.onerror=null" alt="" loading="lazy" draggable="false">` +
-                `<span class="work-num">${key.padStart(2, '0')}</span>` +
-                (item.n === TRENDING ? '<span class="hot-badge">🔥</span>' : '') +
-                `<span class="work-play"><i class="fa-solid fa-play"></i></span><span class="work-glare"></span>` +
-                `<div class="admin-controls">` +
-                  `<button class="admin-btn admin-btn-edit" onclick="openEditCard(event, ${item.n})" title="تعديل"><i class="fa-solid fa-pen"></i></button>` +
-                  `<button class="admin-btn admin-btn-delete" onclick="deleteCard(event, ${item.n})" title="حذف"><i class="fa-solid fa-trash"></i></button>` +
-                `</div>` +
-              `</div>` +
-              `<div class="work-text">` +
-                `<span class="work-label" data-label="${key}"></span>` +
-                `<p class="work-desc" data-desc="${key}"></p>` +
-                `<button class="work-btn"><i class="fa-solid fa-play"></i><span data-i18n="watchVideoBtn"></span></button>` +
-              `</div>`;
-            const open = () => openVideo(i);
-            const card = /** @type {HTMLElement} */ (row.querySelector('.work-card'));
-            enableTilt(card);
-            rows.push({ row, card, text: row.querySelector('.work-text'), parts: Array.from(row.querySelectorAll('.work-text > *')), side: i % 2 === 0 ? 1 : -1 });
-            card.addEventListener('click', open);
-            card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
-            /** @type {HTMLElement} */ (row.querySelector('.work-btn')).addEventListener('click', open);
-            wrap.appendChild(row);
-          });
+                  const wrap = $('worksList');
+                  galleryItems.forEach((item, i) => {
+                    const key = String(item.n);
+                    const row = document.createElement('article');
+                    row.className = 'work-row' + (i % 2 ? ' flip' : '');
+                    row.innerHTML =
+                      `<div class="work-card" role="button" tabindex="0">` +
+                        `<img src="${item.img}" onerror="this.onerror=null" alt="" loading="lazy" draggable="false">` +
+                        `<span class="work-num">${key.padStart(2, '0')}</span>` +
+                        (item.n === TRENDING ? '<span class="hot-badge">🔥</span>' : '') +
+                        `<span class="work-play"><i class="fa-solid fa-play"></i></span><span class="work-glare"></span>` +
+                        `<div class="admin-controls">` +
+                          `<button class="admin-btn admin-btn-edit" onclick="openEditCard(event, ${item.n})" title="تعديل"><i class="fa-solid fa-pen"></i></button>` +
+                          `<button class="admin-btn admin-btn-delete" onclick="deleteCard(event, ${item.n})" title="حذف"><i class="fa-solid fa-trash"></i></button>` +
+                        `</div>` +
+                      `</div>` +
+                      `<div class="work-text">` +
+                        `<span class="work-label" data-label="${key}"></span>` +
+                        `<p class="work-desc" data-desc="${key}"></p>` +
+                        `<button class="work-btn"><i class="fa-solid fa-play"></i><span data-i18n="watchVideoBtn"></span></button>` +
+                      `</div>`;
+                    const open = () => openVideo(i);
+                    const card = /** @type {HTMLElement} */ (row.querySelector('.work-card'));
+                    enableTilt(card);
+                    rows.push({ row, card, text: row.querySelector('.work-text'), parts: Array.from(row.querySelectorAll('.work-text > *')), side: i % 2 === 0 ? 1 : -1 });
+                    card.addEventListener('click', open);
+                    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+                    /** @type {HTMLElement} */ (row.querySelector('.work-btn')).addEventListener('click', open);
+                    wrap.appendChild(row);
+                  });
 }
 function setupReveal() {
-          const els = document.querySelectorAll('.reveal');
-          if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('in')); return; }
-          const io = new IntersectionObserver(entries => {
-            entries.forEach(en => {
-              if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
-            });
-          }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
-          els.forEach(el => io.observe(el));
+                  const els = document.querySelectorAll('.reveal');
+                  if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('in')); return; }
+                  const io = new IntersectionObserver(entries => {
+                    entries.forEach(en => {
+                      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+                    });
+                  }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+                  els.forEach(el => io.observe(el));
 }
 
 /* الفيديو المنبثق */
 function toEmbed(u) {
-          let m = u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/))([\w-]{11})/);
-          if (m) return 'https://www.youtube-nocookie.com/embed/' + m[1] + '?autoplay=1&rel=0&playsinline=1';
-          m = u.match(/drive\.google\.com\/file\/d\/([\w-]+)/);
-          if (m) return 'https://drive.google.com/file/d/' + m[1] + '/preview';
-          return null;
+                  let m = u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/))([\w-]{11})/);
+                  if (m) return 'https://www.youtube-nocookie.com/embed/' + m[1] + '?autoplay=1&rel=0&playsinline=1';
+                  m = u.match(/drive\.google\.com\/file\/d\/([\w-]+)/);
+                  if (m) return 'https://drive.google.com/file/d/' + m[1] + '/preview';
+                  return null;
 }
 function openVideo(idx) {
-          const modal = $('videoModal');
-          const v = /** @type {HTMLVideoElement} */ ($('modalVideo'));
-          const f = /** @type {HTMLIFrameElement} */ ($('modalFrame'));
-          const item = galleryItems[idx];
-          $('modalTitle').textContent = translations[currentLang].workLabel + ' ' + String(item.n).padStart(2, '0');
-          const embed = toEmbed(item.video);
-          if (embed) {
-            v.pause(); v.removeAttribute('src'); v.classList.add('hidden');
-            f.src = embed; f.classList.remove('hidden');
-          } else {
-            f.src = 'about:blank'; f.classList.add('hidden'); v.classList.remove('hidden');
-            v.src = item.video;
-            const p = v.play(); if (p && p.catch) p.catch(() => {});
-          }
-          modal.classList.remove('hidden');
-          modal.classList.add('flex');
+                  const modal = $('videoModal');
+                  const v = /** @type {HTMLVideoElement} */ ($('modalVideo'));
+                  const f = /** @type {HTMLIFrameElement} */ ($('modalFrame'));
+                  const item = galleryItems[idx];
+                  $('modalTitle').textContent = translations[currentLang].workLabel + ' ' + String(item.n).padStart(2, '0');
+                  const embed = toEmbed(item.video);
+                  if (embed) {
+                    v.pause(); v.removeAttribute('src'); v.classList.add('hidden');
+                    f.src = embed; f.classList.remove('hidden');
+                  } else {
+                    f.src = 'about:blank'; f.classList.add('hidden'); v.classList.remove('hidden');
+                    v.src = item.video;
+                    const p = v.play(); if (p && p.catch) p.catch(() => {});
+                  }
+                  modal.classList.remove('hidden');
+                  modal.classList.add('flex');
 }
 function closeVideoModal() {
-          const v = /** @type {HTMLVideoElement} */ ($('modalVideo'));
-          v.pause(); v.removeAttribute('src'); v.load();
-          /** @type {HTMLIFrameElement} */ ($('modalFrame')).src = 'about:blank';
-          $('videoModal').classList.remove('flex');
-          $('videoModal').classList.add('hidden');
+                  const v = /** @type {HTMLVideoElement} */ ($('modalVideo'));
+                  v.pause(); v.removeAttribute('src'); v.load();
+                  /** @type {HTMLIFrameElement} */ ($('modalFrame')).src = 'about:blank';
+                  $('videoModal').classList.remove('flex');
+                  $('videoModal').classList.add('hidden');
 }
 const modalOpen = () => $('videoModal').classList.contains('flex');
 
 /* جسيمات */
 function createHeroParticles() {
-          const container = $('heroParticles');
-          const count = window.innerWidth < 640 ? 10 : 22;
-          for (let i = 0; i < count; i++) {
-            const p = document.createElement('div');
-            p.className = 'hero-particle';
-            const size = (Math.random() * 3 + 2).toFixed(1);
-            p.style.width = size + 'px';
-            p.style.height = size + 'px';
-            p.style.left = (Math.random() * 100) + '%';
-            p.style.animationDuration = (Math.random() * 8 + 9) + 's';
-            p.style.animationDelay = (Math.random() * 12) + 's';
-            container.appendChild(p);
-          }
+                  const container = $('heroParticles');
+                  const count = window.innerWidth < 640 ? 10 : 22;
+                  for (let i = 0; i < count; i++) {
+                    const p = document.createElement('div');
+                    p.className = 'hero-particle';
+                    const size = (Math.random() * 3 + 2).toFixed(1);
+                    p.style.width = size + 'px';
+                    p.style.height = size + 'px';
+                    p.style.left = (Math.random() * 100) + '%';
+                    p.style.animationDuration = (Math.random() * 8 + 9) + 's';
+                    p.style.animationDelay = (Math.random() * 12) + 's';
+                    container.appendChild(p);
+                  }
 }
 
 document.addEventListener('keydown', e => {
-          if (e.key === 'Escape' && cardModalOpen()) { closeCardModal(); return; }
-          if (e.key === 'Escape' && adminModalOpen()) { closeAdminModal(); return; }
-          if (e.key === 'Escape' && modalOpen()) closeVideoModal();
+                  if (e.key === 'Escape' && cardModalOpen()) { closeCardModal(); return; }
+                  if (e.key === 'Escape' && adminModalOpen()) { closeAdminModal(); return; }
+                  if (e.key === 'Escape' && modalOpen()) closeVideoModal();
 });
 
 /* حماية الفيديوهات */
 function protectVideos() {
-          document.addEventListener('contextmenu', e => { if (inside(e, 'video')) e.preventDefault(); });
-          document.addEventListener('dragstart', e => { if (inside(e, 'video')) e.preventDefault(); });
-          const apply = () => document.querySelectorAll('video').forEach(v => {
-            v.setAttribute('controlslist', 'nodownload');
-            v.setAttribute('disablepictureinpicture', '');
-          });
-          apply();
-          document.querySelectorAll('video').forEach(v => v.addEventListener('loadedmetadata', apply));
+                  document.addEventListener('contextmenu', e => { if (inside(e, 'video')) e.preventDefault(); });
+                  document.addEventListener('dragstart', e => { if (inside(e, 'video')) e.preventDefault(); });
+                  const apply = () => document.querySelectorAll('video').forEach(v => {
+                    v.setAttribute('controlslist', 'nodownload');
+                    v.setAttribute('disablepictureinpicture', '');
+                  });
+                  apply();
+                  document.querySelectorAll('video').forEach(v => v.addEventListener('loadedmetadata', apply));
 }
 
 /* ============ تسجيل دخول الأدمن ============ */
@@ -1338,221 +1338,221 @@ let cardErrorKey = 'cardInvalid';
 const isAdmin = () => !!store.get(ADMIN_SESSION_KEY);
 
 function updateAdminAvatar() {
-          $('adminAvatar').classList.toggle('is-admin', isAdmin());
-          $('addCardBtn').classList.toggle('hidden', !isAdmin());
+                  $('adminAvatar').classList.toggle('is-admin', isAdmin());
+                  $('addCardBtn').classList.toggle('hidden', !isAdmin());
 }
 function adminModalOpen() {
-          return $('adminModal').classList.contains('flex');
+                  return $('adminModal').classList.contains('flex');
 }
 function openAdminLogin(e) {
-          if (e) { e.preventDefault(); e.stopPropagation(); }
-          const loggedIn = isAdmin();
-          $('adminForm').classList.toggle('hidden', loggedIn);
-          $('adminLogged').classList.toggle('hidden', !loggedIn);
-          $('adminError').classList.add('hidden');
-          $('adminPass').value = '';
-          if (loggedIn) $('adminLoggedUser').textContent = store.get(ADMIN_SESSION_KEY) || 'admin';
-          else $('adminUser').value = '';
-          $('adminModal').classList.remove('hidden');
-          $('adminModal').classList.add('flex');
-          if (!loggedIn) setTimeout(() => $('adminUser').focus(), 60);
+                  if (e) { e.preventDefault(); e.stopPropagation(); }
+                  const loggedIn = isAdmin();
+                  $('adminForm').classList.toggle('hidden', loggedIn);
+                  $('adminLogged').classList.toggle('hidden', !loggedIn);
+                  $('adminError').classList.add('hidden');
+                  $('adminPass').value = '';
+                  if (loggedIn) $('adminLoggedUser').textContent = store.get(ADMIN_SESSION_KEY) || 'admin';
+                  else $('adminUser').value = '';
+                  $('adminModal').classList.remove('hidden');
+                  $('adminModal').classList.add('flex');
+                  if (!loggedIn) setTimeout(() => $('adminUser').focus(), 60);
 }
 function closeAdminModal() {
-          $('adminModal').classList.remove('flex');
-          $('adminModal').classList.add('hidden');
-          $('adminPass').value = '';
+                  $('adminModal').classList.remove('flex');
+                  $('adminModal').classList.add('hidden');
+                  $('adminPass').value = '';
 }
 function setAdminError(key) {
-          adminErrorKey = key;
-          $('adminError').textContent = translations[currentLang][key] || key;
-          $('adminError').classList.remove('hidden');
+                  adminErrorKey = key;
+                  $('adminError').textContent = translations[currentLang][key] || key;
+                  $('adminError').classList.remove('hidden');
 }
 function submitAdminLogin(e) {
-          if (e) e.preventDefault();
-          const u = $('adminUser').value.trim();
-          const p = $('adminPass').value;
-          const btn = $('adminSignInBtn');
-          adminErrorKey = 'adminWrong';
-          $('adminError').classList.add('hidden');
-          btn.disabled = true;
-          fetch('https://amjid-backend.vercel.app/api/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username: u, password: p }),
-            credentials: 'include'
-          })
-            .then(r => {
-              if (r.status === 401) throw 401;
-              if (r.status === 429) throw 429;
-              if (!r.ok) throw 0;
-              return r.json();
-            })
-            .then(d => {
-              store.set(ADMIN_SESSION_KEY, (d && d.username) || u);
-              $('adminPass').value = '';
-              updateAdminAvatar();
-              $('adminForm').classList.add('hidden');
-              $('adminLogged').classList.remove('hidden');
-              $('adminLoggedUser').textContent = (d && d.username) || u;
-            })
-            .catch(status => {
-              setAdminError(status === 429 ? 'adminTooMany' : status === 401 ? 'adminWrong' : 'adminNoServer');
-              $('adminPass').value = '';
-              $('adminPass').focus();
-            })
-            .finally(() => { btn.disabled = false; });
+                  if (e) e.preventDefault();
+                  const u = $('adminUser').value.trim();
+                  const p = $('adminPass').value;
+                  const btn = $('adminSignInBtn');
+                  adminErrorKey = 'adminWrong';
+                  $('adminError').classList.add('hidden');
+                  btn.disabled = true;
+                  fetch('https://amjid-backend.vercel.app/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: u, password: p }),
+                    credentials: 'include'
+                  })
+                    .then(r => {
+                      if (r.status === 401) throw 401;
+                      if (r.status === 429) throw 429;
+                      if (!r.ok) throw 0;
+                      return r.json();
+                    })
+                    .then(d => {
+                      store.set(ADMIN_SESSION_KEY, (d && d.username) || u);
+                      $('adminPass').value = '';
+                      updateAdminAvatar();
+                      $('adminForm').classList.add('hidden');
+                      $('adminLogged').classList.remove('hidden');
+                      $('adminLoggedUser').textContent = (d && d.username) || u;
+                    })
+                    .catch(status => {
+                      setAdminError(status === 429 ? 'adminTooMany' : status === 401 ? 'adminWrong' : 'adminNoServer');
+                      $('adminPass').value = '';
+                      $('adminPass').focus();
+                    })
+                    .finally(() => { btn.disabled = false; });
 }
 function adminLogout() {
-          fetch('https://amjid-backend.vercel.app/api/logout', { method: 'POST', credentials: 'include' }).catch(() => {});
-          store.remove(ADMIN_SESSION_KEY);
-          updateAdminAvatar();
-          closeAdminModal();
+                  fetch('https://amjid-backend.vercel.app/api/logout', { method: 'POST', credentials: 'include' }).catch(() => {});
+                  store.remove(ADMIN_SESSION_KEY);
+                  updateAdminAvatar();
+                  closeAdminModal();
 }
 
 /* ========== كروت الفيديو المُضافة (باك اند) ========== */
 let editingCardNum = null;
 
 function refreshWorks() {
-          $('worksList').innerHTML = '';
-          rows.length = 0;
-          renderWorks();
-          onScroll();
+                  $('worksList').innerHTML = '';
+                  rows.length = 0;
+                  renderWorks();
+                  onScroll();
 }
 /* تدمج الكروت القادمة من الخادم في قائمة الأعمال (نفس الرقم = استبدال) */
 function mergeCards(cards) {
-          cards.forEach(c => {
-            if (!c || !Number.isInteger(c.n) || c.n < 1) return;
-            const item = { n: c.n, img: String(c.img), video: String(c.video), fallback: '', fallbackVideo: String(c.video), custom: true };
-            const i = galleryItems.findIndex(x => x.n === c.n);
-            if (i >= 0) galleryItems[i] = item; else galleryItems.push(item);
-            translations.ar['galleryDesc' + c.n] = translations.ar.cardCustomDesc;
-            translations.en['galleryDesc' + c.n] = translations.en.cardCustomDesc;
-            translations.ar['galleryTitle' + c.n] = translations.ar['gallerySub' + c.n] = String(c.n);
-            translations.en['galleryTitle' + c.n] = translations.en['gallerySub' + c.n] = String(c.n);
-          });
-          galleryItems.sort((a, b) => a.n - b.n);
-          refreshWorks();
-          applyLanguage();
+                  cards.forEach(c => {
+                    if (!c || !Number.isInteger(c.n) || c.n < 1) return;
+                    const item = { n: c.n, img: String(c.img), video: String(c.video), fallback: '', fallbackVideo: String(c.video), custom: true };
+                    const i = galleryItems.findIndex(x => x.n === c.n);
+                    if (i >= 0) galleryItems[i] = item; else galleryItems.push(item);
+                    translations.ar['galleryDesc' + c.n] = translations.ar.cardCustomDesc;
+                    translations.en['galleryDesc' + c.n] = translations.en.cardCustomDesc;
+                    translations.ar['galleryTitle' + c.n] = translations.ar['gallerySub' + c.n] = String(c.n);
+                    translations.en['galleryTitle' + c.n] = translations.en['gallerySub' + c.n] = String(c.n);
+                  });
+                  galleryItems.sort((a, b) => a.n - b.n);
+                  refreshWorks();
+                  applyLanguage();
 }
 function loadCustomCards() {
-          fetch('https://amjid-backend.vercel.app/api/cards').then(r => (r && r.ok) ? r.json() : null)
-            .then(d => { if (d && Array.isArray(d.cards) && d.cards.length) mergeCards(d.cards); })
-            .catch(() => { /* الخادم مطفأ: نبقي الكروت الأساسية فقط */ });
+                  fetch('https://amjid-backend.vercel.app/api/cards').then(r => (r && r.ok) ? r.json() : null)
+                    .then(d => { if (d && Array.isArray(d.cards) && d.cards.length) mergeCards(d.cards); })
+                    .catch(() => { /* الخادم مطفأ: نبقي الكروت الأساسية فقط */ });
 }
 function cardModalOpen() {
-          return $('cardModal').classList.contains('flex');
+                  return $('cardModal').classList.contains('flex');
 }
 function openAddCard(e) {
-          if (e) { e.preventDefault(); e.stopPropagation(); }
-          if (adminModalOpen()) closeAdminModal();
-          editingCardNum = null;
-          $('cardError').classList.add('hidden');
-          $('cardOk').classList.add('hidden');
-          $('cardNum').value = '';
-          $('cardImg').value = '';
-          $('cardVideo').value = '';
-          $('cardNum').disabled = false;
-          $('cardModalTitle').textContent = translations[currentLang].cardTitle;
-          $('cardSubmitBtn').textContent = translations[currentLang].cardAddBtn;
-          $('cardModal').classList.remove('hidden');
-          $('cardModal').classList.add('flex');
-          setTimeout(() => $('cardNum').focus(), 60);
+                  if (e) { e.preventDefault(); e.stopPropagation(); }
+                  if (adminModalOpen()) closeAdminModal();
+                  editingCardNum = null;
+                  $('cardError').classList.add('hidden');
+                  $('cardOk').classList.add('hidden');
+                  $('cardNum').value = '';
+                  $('cardImg').value = '';
+                  $('cardVideo').value = '';
+                  $('cardNum').disabled = false;
+                  $('cardModalTitle').textContent = translations[currentLang].cardTitle;
+                  $('cardSubmitBtn').textContent = translations[currentLang].cardAddBtn;
+                  $('cardModal').classList.remove('hidden');
+                  $('cardModal').classList.add('flex');
+                  setTimeout(() => $('cardNum').focus(), 60);
 }
 function openEditCard(e, cardNum) {
-          if (e) { e.preventDefault(); e.stopPropagation(); }
-          e.stopPropagation();
-          if (!isAdmin()) { cardFail('cardForbidden'); return; }
-          const item = galleryItems.find(x => x.n === cardNum);
-          if (!item) return;
-          editingCardNum = cardNum;
-          $('cardError').classList.add('hidden');
-          $('cardOk').classList.add('hidden');
-          $('cardNum').value = cardNum;
-          $('cardNum').disabled = true;
-          $('cardImg').value = item.img;
-          $('cardVideo').value = item.video;
-          $('cardModalTitle').textContent = translations[currentLang].cardEditTitle;
-          $('cardSubmitBtn').textContent = translations[currentLang].cardEditBtn;
-          $('cardModal').classList.remove('hidden');
-          $('cardModal').classList.add('flex');
-          setTimeout(() => $('cardImg').focus(), 60);
+                  if (e) { e.preventDefault(); e.stopPropagation(); }
+                  e.stopPropagation();
+                  if (!isAdmin()) { cardFail('cardForbidden'); return; }
+                  const item = galleryItems.find(x => x.n === cardNum);
+                  if (!item) return;
+                  editingCardNum = cardNum;
+                  $('cardError').classList.add('hidden');
+                  $('cardOk').classList.add('hidden');
+                  $('cardNum').value = cardNum;
+                  $('cardNum').disabled = true;
+                  $('cardImg').value = item.img;
+                  $('cardVideo').value = item.video;
+                  $('cardModalTitle').textContent = translations[currentLang].cardEditTitle;
+                  $('cardSubmitBtn').textContent = translations[currentLang].cardEditBtn;
+                  $('cardModal').classList.remove('hidden');
+                  $('cardModal').classList.add('flex');
+                  setTimeout(() => $('cardImg').focus(), 60);
 }
 function deleteCard(e, cardNum) {
-          if (e) { e.preventDefault(); e.stopPropagation(); }
-          e.stopPropagation();
-          if (!isAdmin()) { cardFail('cardForbidden'); return; }
-          if (!confirm(translations[currentLang].cardDeleteConfirm)) return;
-          fetch('https://amjid-backend.vercel.app/api/cards/' + cardNum, { method: 'DELETE', credentials: 'include' })
-            .then(r => {
-              if (r.status === 401) throw 401;
-              if (r.status === 404) throw 404;
-              if (!r.ok) throw 0;
-              return r.json();
-            })
-            .then(d => {
-              mergeCards((d && d.cards) || []);
-              $('cardOk').textContent = translations[currentLang].cardDeleted;
-              $('cardOk').classList.remove('hidden');
-            })
-            .catch(status => cardFail(status === 401 ? 'cardForbidden' : status === 404 ? 'cardInvalid' : 'cardNoServer'));
+                  if (e) { e.preventDefault(); e.stopPropagation(); }
+                  e.stopPropagation();
+                  if (!isAdmin()) { cardFail('cardForbidden'); return; }
+                  if (!confirm(translations[currentLang].cardDeleteConfirm)) return;
+                  fetch('https://amjid-backend.vercel.app/api/cards/' + cardNum, { method: 'DELETE', credentials: 'include' })
+                    .then(r => {
+                      if (r.status === 401) throw 401;
+                      if (r.status === 404) throw 404;
+                      if (!r.ok) throw 0;
+                      return r.json();
+                    })
+                    .then(d => {
+                      mergeCards((d && d.cards) || []);
+                      $('cardOk').textContent = translations[currentLang].cardDeleted;
+                      $('cardOk').classList.remove('hidden');
+                    })
+                    .catch(status => cardFail(status === 401 ? 'cardForbidden' : status === 404 ? 'cardInvalid' : 'cardNoServer'));
 }
 function closeCardModal() {
-          $('cardModal').classList.remove('flex');
-          $('cardModal').classList.add('hidden');
+                  $('cardModal').classList.remove('flex');
+                  $('cardModal').classList.add('hidden');
 }
 function cardFail(key) {
-          cardErrorKey = key;
-          $('cardError').textContent = translations[currentLang][key] || key;
-          $('cardError').classList.remove('hidden');
-          $('cardOk').classList.add('hidden');
+                  cardErrorKey = key;
+                  $('cardError').textContent = translations[currentLang][key] || key;
+                  $('cardError').classList.remove('hidden');
+                  $('cardOk').classList.add('hidden');
 }
 function submitCardForm(e) {
-          if (e) e.preventDefault();
-          const n = parseInt($('cardNum').value, 10);
-          const img = $('cardImg').value.trim();
-          const video = $('cardVideo').value.trim();
-          const isUrl = u => /^https?:\/\/\S+$/i.test(u) && u.length <= 2048;
-          if (!(n >= 1 && n <= 9999) || !isUrl(img) || !isUrl(video)) { cardFail('cardInvalid'); return; }
-          $('cardError').classList.add('hidden');
-          const btn = $('cardSubmitBtn');
-          btn.disabled = true;
-          const isEdit = editingCardNum !== null;
-          const url = isEdit ? 'https://amjid-backend.vercel.app/api/cards/' + editingCardNum : 'https://amjid-backend.vercel.app/api/cards';
-          const method = isEdit ? 'PUT' : 'POST';
-          fetch(url, {
-            method: method,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ n: n, img: img, video: video }),
-            credentials: 'include'
-          })
-            .then(r => {
-              if (r.status === 401) throw 401;
-              if (r.status === 400) throw 400;
-              if (r.status === 404) throw 404;
-              if (!r.ok) throw 0;
-              return r.json();
-            })
-            .then(d => {
-              mergeCards((d && d.cards) || [{ n: n, img: img, video: video }]);
-              $('cardOk').textContent = isEdit ? translations[currentLang].cardUpdated : translations[currentLang].cardSaved;
-              $('cardOk').classList.remove('hidden');
-              if (!isEdit) {
-                $('cardNum').value = '';
-                $('cardImg').value = '';
-                $('cardVideo').value = '';
-              }
-            })
-            .catch(status => cardFail(status === 401 ? 'cardForbidden' : status === 400 || status === 404 ? 'cardInvalid' : 'cardNoServer'))
-            .finally(() => { btn.disabled = false; });
+                  if (e) e.preventDefault();
+                  const n = parseInt($('cardNum').value, 10);
+                  const img = $('cardImg').value.trim();
+                  const video = $('cardVideo').value.trim();
+                  const isUrl = u => /^https?:\/\/\S+$/i.test(u) && u.length <= 2048;
+                  if (!(n >= 1 && n <= 9999) || !isUrl(img) || !isUrl(video)) { cardFail('cardInvalid'); return; }
+                  $('cardError').classList.add('hidden');
+                  const btn = $('cardSubmitBtn');
+                  btn.disabled = true;
+                  const isEdit = editingCardNum !== null;
+                  const url = isEdit ? 'https://amjid-backend.vercel.app/api/cards/' + editingCardNum : 'https://amjid-backend.vercel.app/api/cards';
+                  const method = isEdit ? 'PUT' : 'POST';
+                  fetch(url, {
+                    method: method,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ n: n, img: img, video: video }),
+                    credentials: 'include'
+                  })
+                    .then(r => {
+                      if (r.status === 401) throw 401;
+                      if (r.status === 400) throw 400;
+                      if (r.status === 404) throw 404;
+                      if (!r.ok) throw 0;
+                      return r.json();
+                    })
+                    .then(d => {
+                      mergeCards((d && d.cards) || [{ n: n, img: img, video: video }]);
+                      $('cardOk').textContent = isEdit ? translations[currentLang].cardUpdated : translations[currentLang].cardSaved;
+                      $('cardOk').classList.remove('hidden');
+                      if (!isEdit) {
+                        $('cardNum').value = '';
+                        $('cardImg').value = '';
+                        $('cardVideo').value = '';
+                      }
+                    })
+                    .catch(status => cardFail(status === 401 ? 'cardForbidden' : status === 400 || status === 404 ? 'cardInvalid' : 'cardNoServer'))
+                    .finally(() => { btn.disabled = false; });
 }
 
 /* نتحقق من الجلسة على الخادم عند فتح الصفحة */
 function checkAdminSession() {
-          fetch('https://amjid-backend.vercel.app/api/me', { credentials: 'include' }).then(r => (r && r.ok) ? r.json() : null).then(d => {
-            if (d && d.authenticated) store.set(ADMIN_SESSION_KEY, d.username || 'admin');
-            else store.remove(ADMIN_SESSION_KEY);
-            updateAdminAvatar();
-          }).catch(() => { updateAdminAvatar(); });
+                  fetch('https://amjid-backend.vercel.app/api/me', { credentials: 'include' }).then(r => (r && r.ok) ? r.json() : null).then(d => {
+                    if (d && d.authenticated) store.set(ADMIN_SESSION_KEY, d.username || 'admin');
+                    else store.remove(ADMIN_SESSION_KEY);
+                    updateAdminAvatar();
+                  }).catch(() => { updateAdminAvatar(); });
 }
 
 /* للـ onclick في HTML */
