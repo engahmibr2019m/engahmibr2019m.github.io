@@ -1336,7 +1336,8 @@ function submitAdminLogin(e) {
           adminErrorKey = 'adminWrong';
           $('adminError').classList.add('hidden');
           btn.disabled = true;
-          fetch('api/login', {
+          fetch('https://amjid-backend.vercel.app/api/login', {
+            credentials: 'include',
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username: u, password: p })
@@ -1363,7 +1364,7 @@ function submitAdminLogin(e) {
             .finally(() => { btn.disabled = false; });
 }
 function adminLogout() {
-          fetch('api/logout', { method: 'POST' }).catch(() => {});
+          fetch('https://amjid-backend.vercel.app/api/logout', { method: 'POST', credentials: 'include' }).catch(() => {});
           store.remove(ADMIN_SESSION_KEY);
           updateAdminAvatar();
           closeAdminModal();
@@ -1393,7 +1394,7 @@ function mergeCards(cards) {
           applyLanguage();
 }
 function loadCustomCards() {
-          fetch('https://amjid-backend.vercel.app/api/cards').then(r => (r && r.ok) ? r.json() : null)
+          fetch('https://amjid-backend.vercel.app/api/cards', { credentials: 'include' }).then(r => (r && r.ok) ? r.json() : null)
             .then(d => { if (d && Array.isArray(d.cards) && d.cards.length) mergeCards(d.cards); })
             .catch(() => { /* الخادم مطفأ: نبقي الكروت الأساسية فقط */ });
 }
@@ -1433,6 +1434,7 @@ function submitNewCard(e) {
           const btn = $('cardSubmitBtn');
           btn.disabled = true;
           fetch('https://amjid-backend.vercel.app/api/cards', {
+            credentials: 'include',
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ n: n, img: img, video: video })
@@ -1457,7 +1459,7 @@ function submitNewCard(e) {
 
 /* نتحقق من الجلسة على الخادم عند فتح الصفحة */
 function checkAdminSession() {
-          fetch('https://amjid-backend.vercel.app/api/me').then(r => (r && r.ok) ? r.json() : null).then(d => {
+          fetch('https://amjid-backend.vercel.app/api/me', { credentials: 'include' }).then(r => (r && r.ok) ? r.json() : null).then(d => {
             if (d && d.authenticated) store.set(ADMIN_SESSION_KEY, d.username || 'admin');
             else store.remove(ADMIN_SESSION_KEY);
             updateAdminAvatar();
